@@ -8,3 +8,6 @@ The user will be presented with an inviting game screen. On the top of the scree
 When the user presses start, the computer will select a mystery word. A select number of lines will appear on the bottom of the screen, representing the number of letters in the mystery word. The user will try to guess the mystery word by guessing its letters. The user will click on a letter to guess it. If the word contains the letter, it will turn green, and it will replace the line(s) representing it on the bottom of the screen. If the word does not contain the letter, it will turn red, and a part of the snowman will melt. There are 6 parts to the snowman which will disappear one at a time. The goal of the game is for the user to guess all the letters in the word, before the entire snowman melts.
 
 *The full spec for the game is in the repo*
+
+![Melting Snowman](https://github.com/ChavaRaitzik/Melting-Snowman/assets/113143418/456839a4-ad62-4417-b78e-05a79f7365d4)
+
