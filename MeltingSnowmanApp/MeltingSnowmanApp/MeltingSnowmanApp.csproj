@@ -8,4 +8,47 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\SnowmanPicture1.png" />
+    <None Remove="Images\SnowmanPicture2.png" />
+    <None Remove="Images\SnowmanPicture3.png" />
+    <None Remove="Images\SnowmanPicture4.png" />
+    <None Remove="Images\SnowmanPicture5.png" />
+    <None Remove="Images\SnowmanPicture6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\SnowmanPicture4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\SnowmanPicture1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SnowmanPicture2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SnowmanPicture3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\SnowmanPicture5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\SnowmanPicture6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CrypticWizard.RandomWordGenerator" Version="0.9.5" />
+  </ItemGroup>
+
 </Project>
