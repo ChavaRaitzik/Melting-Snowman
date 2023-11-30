@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +20,8 @@ namespace MeltingSnowmanApp
         List<string> lstwords;
         List<Button> lstabcbuttons;
         List<PictureBox> lstpictureboxes;
+        List<String> lstmessagegamewon = new() { "You Won!", "Great Job!", "Congratulations!" };
+        List<String> lstmessagegamelost = new() { "Better Luck Next Time", "Too Many Incorrect Guesses", "Try Again" };
 
         WordGenerator wordgenerator = new();
 
@@ -25,9 +29,9 @@ namespace MeltingSnowmanApp
         enum GameStatusEnum { NotStarted, Playing, GameWon, GameLost }
         GameStatusEnum gamestatus = GameStatusEnum.NotStarted;
 
-        string mysteryword;
-        int numofletters;
-        string blanks;
+        string mysteryword = "";
+        string stars = "";
+
         public frmMeltingSnowmanApp()
         {
             InitializeComponent();
@@ -46,10 +50,10 @@ namespace MeltingSnowmanApp
 
         private void GetMysteryWord()
         {
-            mysteryword = lstwords[rnd.Next(0, lstwords.Count)];
-            numofletters = mysteryword.Length;
-            blanks = new StringBuilder().Insert(0, "*", numofletters).ToString();
-            lblMysteryWord.Text = blanks + mysteryword;
+            mysteryword = lstwords[rnd.Next(0, lstwords.Count)].ToLower();
+            stars = new string('*', mysteryword.Length);
+            lblMysteryWord.Text = stars;
+            lblMessageBox.Text = mysteryword;
         }
 
         private void GuessALetter(Button btn)
@@ -58,15 +62,10 @@ namespace MeltingSnowmanApp
             if (mysteryword.Contains(letter))
             {
                 btn.BackColor = Color.Green;
-                while (mysteryword.Contains(letter))
-                {
-                    int index = 0;
-                    index = mysteryword.IndexOf(letter);
-                    lblMysteryWord.Text = lblMysteryWord.Text.Remove(index, 1);
-                    lblMysteryWord.Text = lblMysteryWord.Text.Insert(index, letter);
-                    mysteryword.Remove(index, 1);
-                    Application.DoEvents();
-                }
+                int index = mysteryword.IndexOf(letter);
+                lblMysteryWord.Text = lblMysteryWord.Text.Remove(index, 1);
+                lblMysteryWord.Text = lblMysteryWord.Text.Insert(index, letter);
+                mysteryword.Remove(index, 1);
             }
             else
             {
@@ -76,10 +75,77 @@ namespace MeltingSnowmanApp
             }
         }
 
-        private void BtnStart_Click(object? sender, EventArgs e)
+        private void DetectGameWonOrLost()
+        {
+            if (lblMysteryWord.Text == mysteryword)
+            {
+                gamestatus = GameStatusEnum.GameWon;
+                GetScore();
+            }
+            else if (lstpictureboxes.TrueForAll(pb => pb.Image == null))
+            {
+                gamestatus = GameStatusEnum.GameLost;
+                GetScore();
+            }
+            GetMysteryWordForeColor();
+        }
+
+        private void GetScore()
+        {
+            int score = 0;
+            List<String> lstmessage = new();
+            int.TryParse(txtScoreBox.Text, out score);
+                switch (gamestatus)
+                {
+                    case GameStatusEnum.GameWon:
+                        score = score + 1;
+                        lstmessage = lstmessagegamewon;
+                        break;
+                    case GameStatusEnum.GameLost:
+                        score = score - 1;
+                        lstmessage = lstmessagegamelost;
+                        break;
+                }
+            txtScoreBox.Text = score.ToString();
+            lblMessageBox.Text = lstmessage[rnd.Next(0, lstmessage.Count)];
+        }
+
+        private void GetMysteryWordForeColor()
+        {
+            switch (gamestatus)
+            {
+                case GameStatusEnum.GameWon:
+                    lblMysteryWord.ForeColor = Color.Green;
+                    break;
+                case GameStatusEnum.GameLost:
+                    lblMysteryWord.ForeColor = Color.Red;
+                    break;
+                default:
+                    lblMysteryWord.ForeColor = Color.Black;
+                    break;
+            }
+                
+        }
+
+        private void NewGame()
         {
             gamestatus = GameStatusEnum.Playing;
+            lstabcbuttons.ForEach(b => b.BackColor = Color.Yellow);
+            lblMessageBox.Text = "";
+            lblMysteryWord.Text = "";
+            picbox1.ImageLocation = path + "SnowmanPicture1.png";
+            picbox2.ImageLocation = path + "SnowmanPicture2.png";
+            picbox3.ImageLocation = path + "SnowmanPicture3.png";
+            picbox4.ImageLocation = path + "SnowmanPicture4.png";
+            picbox5.ImageLocation = path + "SnowmanPicture5.png";
+            picbox6.ImageLocation = path + "SnowmanPicture6.png";
+            GetMysteryWordForeColor();
             GetMysteryWord();
+        }
+
+        private void BtnStart_Click(object? sender, EventArgs e)
+        {
+            NewGame();
         }
 
         private void ABCButton_Click(object? sender, EventArgs e)
@@ -90,6 +156,7 @@ namespace MeltingSnowmanApp
                 {
                     Button btn = (Button)sender;
                     GuessALetter(btn);
+                    DetectGameWonOrLost();
                 }
             }
         }
