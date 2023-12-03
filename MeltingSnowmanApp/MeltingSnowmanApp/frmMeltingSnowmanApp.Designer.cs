@@ -117,7 +117,7 @@
             lblMeltingSnowman.AutoSize = true;
             lblMeltingSnowman.Dock = DockStyle.Fill;
             lblMeltingSnowman.Font = new Font("Algerian", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMeltingSnowman.ForeColor = Color.FromArgb(0, 0, 192);
+            lblMeltingSnowman.ForeColor = Color.DarkBlue;
             lblMeltingSnowman.Location = new Point(25, 19);
             lblMeltingSnowman.Name = "lblMeltingSnowman";
             lblMeltingSnowman.Size = new Size(862, 87);
@@ -274,7 +274,7 @@
             // 
             // btnA
             // 
-            btnA.BackColor = Color.Yellow;
+            btnA.BackColor = Color.DarkBlue;
             btnA.Dock = DockStyle.Fill;
             btnA.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnA.ForeColor = Color.White;
@@ -287,7 +287,7 @@
             // 
             // btnB
             // 
-            btnB.BackColor = Color.Yellow;
+            btnB.BackColor = Color.DarkBlue;
             btnB.Dock = DockStyle.Fill;
             btnB.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnB.ForeColor = Color.White;
@@ -300,7 +300,7 @@
             // 
             // btnC
             // 
-            btnC.BackColor = Color.Yellow;
+            btnC.BackColor = Color.DarkBlue;
             btnC.Dock = DockStyle.Fill;
             btnC.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnC.ForeColor = Color.White;
@@ -313,7 +313,7 @@
             // 
             // btnD
             // 
-            btnD.BackColor = Color.Yellow;
+            btnD.BackColor = Color.DarkBlue;
             btnD.Dock = DockStyle.Fill;
             btnD.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnD.ForeColor = Color.White;
@@ -326,7 +326,7 @@
             // 
             // btnE
             // 
-            btnE.BackColor = Color.Yellow;
+            btnE.BackColor = Color.DarkBlue;
             btnE.Dock = DockStyle.Fill;
             btnE.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnE.ForeColor = Color.White;
@@ -339,7 +339,7 @@
             // 
             // btnF
             // 
-            btnF.BackColor = Color.Yellow;
+            btnF.BackColor = Color.DarkBlue;
             btnF.Dock = DockStyle.Fill;
             btnF.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnF.ForeColor = Color.White;
@@ -352,7 +352,7 @@
             // 
             // btnG
             // 
-            btnG.BackColor = Color.Yellow;
+            btnG.BackColor = Color.DarkBlue;
             btnG.Dock = DockStyle.Fill;
             btnG.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnG.ForeColor = Color.White;
@@ -365,7 +365,7 @@
             // 
             // btnH
             // 
-            btnH.BackColor = Color.Yellow;
+            btnH.BackColor = Color.DarkBlue;
             btnH.Dock = DockStyle.Fill;
             btnH.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnH.ForeColor = Color.White;
@@ -378,7 +378,7 @@
             // 
             // btnI
             // 
-            btnI.BackColor = Color.Yellow;
+            btnI.BackColor = Color.DarkBlue;
             btnI.Dock = DockStyle.Fill;
             btnI.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnI.ForeColor = Color.White;
@@ -391,7 +391,7 @@
             // 
             // btnJ
             // 
-            btnJ.BackColor = Color.Yellow;
+            btnJ.BackColor = Color.DarkBlue;
             btnJ.Dock = DockStyle.Fill;
             btnJ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnJ.ForeColor = Color.White;
@@ -404,7 +404,7 @@
             // 
             // btnK
             // 
-            btnK.BackColor = Color.Yellow;
+            btnK.BackColor = Color.DarkBlue;
             btnK.Dock = DockStyle.Fill;
             btnK.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnK.ForeColor = Color.White;
@@ -417,7 +417,7 @@
             // 
             // btnL
             // 
-            btnL.BackColor = Color.Yellow;
+            btnL.BackColor = Color.DarkBlue;
             btnL.Dock = DockStyle.Fill;
             btnL.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnL.ForeColor = Color.White;
@@ -430,7 +430,7 @@
             // 
             // btnM
             // 
-            btnM.BackColor = Color.Yellow;
+            btnM.BackColor = Color.DarkBlue;
             btnM.Dock = DockStyle.Fill;
             btnM.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnM.ForeColor = Color.White;
@@ -443,7 +443,7 @@
             // 
             // btnN
             // 
-            btnN.BackColor = Color.Yellow;
+            btnN.BackColor = Color.DarkBlue;
             btnN.Dock = DockStyle.Fill;
             btnN.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnN.ForeColor = Color.White;
@@ -456,7 +456,7 @@
             // 
             // btnO
             // 
-            btnO.BackColor = Color.Yellow;
+            btnO.BackColor = Color.DarkBlue;
             btnO.Dock = DockStyle.Fill;
             btnO.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnO.ForeColor = Color.White;
@@ -469,7 +469,7 @@
             // 
             // btnP
             // 
-            btnP.BackColor = Color.Yellow;
+            btnP.BackColor = Color.DarkBlue;
             btnP.Dock = DockStyle.Fill;
             btnP.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnP.ForeColor = Color.White;
@@ -482,7 +482,7 @@
             // 
             // btnQ
             // 
-            btnQ.BackColor = Color.Yellow;
+            btnQ.BackColor = Color.DarkBlue;
             btnQ.Dock = DockStyle.Fill;
             btnQ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnQ.ForeColor = Color.White;
@@ -495,7 +495,7 @@
             // 
             // btnR
             // 
-            btnR.BackColor = Color.Yellow;
+            btnR.BackColor = Color.DarkBlue;
             btnR.Dock = DockStyle.Fill;
             btnR.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnR.ForeColor = Color.White;
@@ -508,7 +508,7 @@
             // 
             // btnS
             // 
-            btnS.BackColor = Color.Yellow;
+            btnS.BackColor = Color.DarkBlue;
             btnS.Dock = DockStyle.Fill;
             btnS.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnS.ForeColor = Color.White;
@@ -521,7 +521,7 @@
             // 
             // btnT
             // 
-            btnT.BackColor = Color.Yellow;
+            btnT.BackColor = Color.DarkBlue;
             btnT.Dock = DockStyle.Fill;
             btnT.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnT.ForeColor = Color.White;
@@ -534,7 +534,7 @@
             // 
             // btnU
             // 
-            btnU.BackColor = Color.Yellow;
+            btnU.BackColor = Color.DarkBlue;
             btnU.Dock = DockStyle.Fill;
             btnU.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnU.ForeColor = Color.White;
@@ -547,7 +547,7 @@
             // 
             // btnV
             // 
-            btnV.BackColor = Color.Yellow;
+            btnV.BackColor = Color.DarkBlue;
             btnV.Dock = DockStyle.Fill;
             btnV.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnV.ForeColor = Color.White;
@@ -560,7 +560,7 @@
             // 
             // btnW
             // 
-            btnW.BackColor = Color.Yellow;
+            btnW.BackColor = Color.DarkBlue;
             btnW.Dock = DockStyle.Fill;
             btnW.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnW.ForeColor = Color.White;
@@ -573,7 +573,7 @@
             // 
             // btnX
             // 
-            btnX.BackColor = Color.Yellow;
+            btnX.BackColor = Color.DarkBlue;
             btnX.Dock = DockStyle.Fill;
             btnX.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnX.ForeColor = Color.White;
@@ -586,7 +586,7 @@
             // 
             // btnY
             // 
-            btnY.BackColor = Color.Yellow;
+            btnY.BackColor = Color.DarkBlue;
             btnY.Dock = DockStyle.Fill;
             btnY.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnY.ForeColor = Color.White;
@@ -599,7 +599,7 @@
             // 
             // btnZ
             // 
-            btnZ.BackColor = Color.Yellow;
+            btnZ.BackColor = Color.DarkBlue;
             btnZ.Dock = DockStyle.Fill;
             btnZ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             btnZ.ForeColor = Color.White;
@@ -638,6 +638,7 @@
             // 
             // picbox2
             // 
+            picbox2.Dock = DockStyle.Fill;
             picbox2.Location = new Point(69, 74);
             picbox2.Margin = new Padding(0);
             picbox2.Name = "picbox2";
@@ -693,10 +694,11 @@
             // picbox1
             // 
             picbox1.BackgroundImageLayout = ImageLayout.None;
+            picbox1.Dock = DockStyle.Fill;
             picbox1.Location = new Point(69, 0);
             picbox1.Margin = new Padding(0);
             picbox1.Name = "picbox1";
-            picbox1.Size = new Size(319, 74);
+            picbox1.Size = new Size(325, 74);
             picbox1.SizeMode = PictureBoxSizeMode.StretchImage;
             picbox1.TabIndex = 6;
             picbox1.TabStop = false;
