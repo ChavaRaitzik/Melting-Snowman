@@ -95,17 +95,17 @@ namespace MeltingSnowmanApp
             int score = 0;
             List<String> lstmessage = new();
             int.TryParse(txtScoreBox.Text, out score);
-                switch (gamestatus)
-                {
-                    case GameStatusEnum.GameWon:
-                        score = score + 1;
-                        lstmessage = lstmessagegamewon;
-                        break;
-                    case GameStatusEnum.GameLost:
-                        score = score - 1;
-                        lstmessage = lstmessagegamelost;
-                        break;
-                }
+            switch (gamestatus)
+            {
+                case GameStatusEnum.GameWon:
+                    score = score + 1;
+                    lstmessage = lstmessagegamewon;
+                    break;
+                case GameStatusEnum.GameLost:
+                    score = score - 1;
+                    lstmessage = lstmessagegamelost;
+                    break;
+            }
             txtScoreBox.Text = score.ToString();
             lblMessageBox.Text = lstmessage[rnd.Next(0, lstmessage.Count)];
         }
@@ -124,7 +124,7 @@ namespace MeltingSnowmanApp
                     lblMysteryWord.ForeColor = Color.Black;
                     break;
             }
-                
+
         }
 
         private void NewGame()

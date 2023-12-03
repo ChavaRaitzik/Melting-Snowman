@@ -34,6 +34,7 @@
             btnStart = new Button();
             txtScoreBox = new TextBox();
             lblMessageBox = new Label();
+            txtScore = new TextBox();
             tblMiddle = new TableLayoutPanel();
             tblABC = new TableLayoutPanel();
             btnA = new Button();
@@ -126,15 +127,17 @@
             // 
             // tblToolbar
             // 
-            tblToolbar.ColumnCount = 5;
+            tblToolbar.ColumnCount = 6;
             tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13F));
             tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.5F));
-            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62F));
             tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.5F));
-            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7F));
             tblToolbar.Controls.Add(btnStart, 0, 0);
-            tblToolbar.Controls.Add(txtScoreBox, 4, 0);
+            tblToolbar.Controls.Add(txtScoreBox, 5, 0);
             tblToolbar.Controls.Add(lblMessageBox, 2, 0);
+            tblToolbar.Controls.Add(txtScore, 4, 0);
             tblToolbar.Dock = DockStyle.Fill;
             tblToolbar.Location = new Point(25, 109);
             tblToolbar.Name = "tblToolbar";
@@ -162,12 +165,12 @@
             txtScoreBox.Dock = DockStyle.Fill;
             txtScoreBox.Font = new Font("Constantia", 15F, FontStyle.Bold, GraphicsUnit.Point);
             txtScoreBox.ForeColor = Color.White;
-            txtScoreBox.Location = new Point(708, 3);
+            txtScoreBox.Location = new Point(800, 3);
+            txtScoreBox.Margin = new Padding(0, 3, 3, 3);
             txtScoreBox.Multiline = true;
             txtScoreBox.Name = "txtScoreBox";
-            txtScoreBox.Size = new Size(151, 51);
+            txtScoreBox.Size = new Size(59, 51);
             txtScoreBox.TabIndex = 1;
-            txtScoreBox.Text = "SCORE:";
             // 
             // lblMessageBox
             // 
@@ -178,9 +181,23 @@
             lblMessageBox.ForeColor = Color.FromArgb(64, 0, 64);
             lblMessageBox.Location = new Point(136, 0);
             lblMessageBox.Name = "lblMessageBox";
-            lblMessageBox.Size = new Size(545, 57);
+            lblMessageBox.Size = new Size(528, 57);
             lblMessageBox.TabIndex = 2;
             lblMessageBox.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtScore
+            // 
+            txtScore.BackColor = Color.Black;
+            txtScore.Dock = DockStyle.Fill;
+            txtScore.Font = new Font("Constantia", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            txtScore.ForeColor = Color.White;
+            txtScore.Location = new Point(691, 3);
+            txtScore.Margin = new Padding(3, 3, 0, 3);
+            txtScore.Multiline = true;
+            txtScore.Name = "txtScore";
+            txtScore.Size = new Size(109, 51);
+            txtScore.TabIndex = 3;
+            txtScore.Text = "SCORE:";
             // 
             // tblMiddle
             // 
@@ -679,7 +696,7 @@
             picbox1.Location = new Point(69, 0);
             picbox1.Margin = new Padding(0);
             picbox1.Name = "picbox1";
-            picbox1.Size = new Size(325, 74);
+            picbox1.Size = new Size(319, 74);
             picbox1.SizeMode = PictureBoxSizeMode.StretchImage;
             picbox1.TabIndex = 6;
             picbox1.TabStop = false;
@@ -765,5 +782,6 @@
         private PictureBox picbox1;
         private Label lblMessageBox;
         private Label lblMysteryWord;
+        private TextBox txtScore;
     }
 }
