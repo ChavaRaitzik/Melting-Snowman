@@ -51,7 +51,7 @@ namespace MeltingSnowmanApp
         private void GetMysteryWord()
         {
             mysteryword = lstwords[rnd.Next(0, lstwords.Count)].ToLower();
-            stars = new string('*', mysteryword.Length);
+            stars = new string('-', mysteryword.Length);
             lblMysteryWord.Text = stars;
         }
 

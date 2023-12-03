@@ -627,19 +627,19 @@
             tblSnowman.Margin = new Padding(0);
             tblSnowman.Name = "tblSnowman";
             tblSnowman.RowCount = 6;
-            tblSnowman.RowStyles.Add(new RowStyle());
-            tblSnowman.RowStyles.Add(new RowStyle());
-            tblSnowman.RowStyles.Add(new RowStyle());
-            tblSnowman.RowStyles.Add(new RowStyle());
-            tblSnowman.RowStyles.Add(new RowStyle());
-            tblSnowman.RowStyles.Add(new RowStyle());
+            tblSnowman.RowStyles.Add(new RowStyle(SizeType.Percent, 17.43487F));
+            tblSnowman.RowStyles.Add(new RowStyle(SizeType.Percent, 16.0320644F));
+            tblSnowman.RowStyles.Add(new RowStyle(SizeType.Percent, 14.0280561F));
+            tblSnowman.RowStyles.Add(new RowStyle(SizeType.Percent, 15.6312618F));
+            tblSnowman.RowStyles.Add(new RowStyle(SizeType.Percent, 18.0360718F));
+            tblSnowman.RowStyles.Add(new RowStyle(SizeType.Percent, 18.8376732F));
             tblSnowman.Size = new Size(465, 440);
             tblSnowman.TabIndex = 1;
             // 
             // picbox2
             // 
             picbox2.Dock = DockStyle.Fill;
-            picbox2.Location = new Point(70, 74);
+            picbox2.Location = new Point(70, 76);
             picbox2.Margin = new Padding(0);
             picbox2.Name = "picbox2";
             picbox2.Size = new Size(325, 70);
@@ -650,10 +650,10 @@
             // picbox3
             // 
             picbox3.Dock = DockStyle.Fill;
-            picbox3.Location = new Point(70, 144);
+            picbox3.Location = new Point(70, 146);
             picbox3.Margin = new Padding(0);
             picbox3.Name = "picbox3";
-            picbox3.Size = new Size(325, 66);
+            picbox3.Size = new Size(325, 61);
             picbox3.SizeMode = PictureBoxSizeMode.StretchImage;
             picbox3.TabIndex = 2;
             picbox3.TabStop = false;
@@ -661,10 +661,10 @@
             // picbox4
             // 
             picbox4.Dock = DockStyle.Fill;
-            picbox4.Location = new Point(70, 210);
+            picbox4.Location = new Point(70, 207);
             picbox4.Margin = new Padding(0);
             picbox4.Name = "picbox4";
-            picbox4.Size = new Size(325, 70);
+            picbox4.Size = new Size(325, 68);
             picbox4.SizeMode = PictureBoxSizeMode.StretchImage;
             picbox4.TabIndex = 3;
             picbox4.TabStop = false;
@@ -672,10 +672,10 @@
             // picbox5
             // 
             picbox5.Dock = DockStyle.Fill;
-            picbox5.Location = new Point(70, 280);
+            picbox5.Location = new Point(70, 275);
             picbox5.Margin = new Padding(0);
             picbox5.Name = "picbox5";
-            picbox5.Size = new Size(325, 78);
+            picbox5.Size = new Size(325, 79);
             picbox5.SizeMode = PictureBoxSizeMode.StretchImage;
             picbox5.TabIndex = 4;
             picbox5.TabStop = false;
@@ -683,10 +683,10 @@
             // picbox6
             // 
             picbox6.Dock = DockStyle.Fill;
-            picbox6.Location = new Point(70, 358);
+            picbox6.Location = new Point(70, 354);
             picbox6.Margin = new Padding(0);
             picbox6.Name = "picbox6";
-            picbox6.Size = new Size(325, 82);
+            picbox6.Size = new Size(325, 86);
             picbox6.SizeMode = PictureBoxSizeMode.StretchImage;
             picbox6.TabIndex = 5;
             picbox6.TabStop = false;
@@ -698,7 +698,7 @@
             picbox1.Location = new Point(70, 0);
             picbox1.Margin = new Padding(0);
             picbox1.Name = "picbox1";
-            picbox1.Size = new Size(325, 74);
+            picbox1.Size = new Size(325, 76);
             picbox1.SizeMode = PictureBoxSizeMode.StretchImage;
             picbox1.TabIndex = 6;
             picbox1.TabStop = false;
