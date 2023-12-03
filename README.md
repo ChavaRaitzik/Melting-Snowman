@@ -9,5 +9,5 @@ When the user presses start, the computer will select a mystery word. A select n
 
 *The full spec for the game is in the repo*
 
-![Melting Snowman](https://github.com/ChavaRaitzik/Melting-Snowman/assets/113143418/456839a4-ad62-4417-b78e-05a79f7365d4)
+![image](https://github.com/ChavaRaitzik/Melting-Snowman/assets/113143418/0efed300-3e04-45b7-96e3-476c2ffc6c90)
 
