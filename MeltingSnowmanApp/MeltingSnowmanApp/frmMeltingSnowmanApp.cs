@@ -61,8 +61,11 @@ namespace MeltingSnowmanApp
             if (mysteryword.Contains(letter))
             {
                 btn.BackColor = Color.LimeGreen;
+                //SM Why do you need this variable? You never use it.
                 int index = mysteryword.IndexOf(letter);
                 List<int> lstindexes = new();
+                //SM Why do you need two loops? Use one loop and every time you find the letter just replace the mysteryword[i] in lblMysteryWord with the letter.
+                //The same as you d in 2 loops you should be able to do in one loop
                 for (int i = 0; i < mysteryword.Length; i++)
                 {
                     if (mysteryword[i] == letter)
@@ -72,6 +75,7 @@ namespace MeltingSnowmanApp
                 }
                 for (int i = 0; i < lstindexes.Count; i += 1)
                 {
+                    //SM Use replace()
                     lblMysteryWord.Text = lblMysteryWord.Text.Remove(lstindexes[i], 1);
                     lblMysteryWord.Text = lblMysteryWord.Text.Insert(lstindexes[i], letter.ToString());
                 }
