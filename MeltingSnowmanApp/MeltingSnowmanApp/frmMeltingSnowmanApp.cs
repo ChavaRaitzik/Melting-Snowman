@@ -96,7 +96,7 @@ namespace MeltingSnowmanApp
                 gamestatus = GameStatusEnum.GameLost;
                 GetScore();
             }
-            GetMysteryWordForeColor();
+            GetForeColor();
         }
 
         private void GetScore()
@@ -120,15 +120,17 @@ namespace MeltingSnowmanApp
             lblMessageBox.Text = lstmessage[rnd.Next(0, lstmessage.Count)];
         }
 
-        private void GetMysteryWordForeColor()
+        private void GetForeColor()
         {
             switch (gamestatus)
             {
                 case GameStatusEnum.GameWon:
                     lblMysteryWord.ForeColor = Color.LimeGreen;
+                    lblMessageBox.ForeColor = Color.LimeGreen;
                     break;
                 case GameStatusEnum.GameLost:
                     lblMysteryWord.ForeColor = Color.Red;
+                    lblMessageBox.ForeColor= Color.Red;
                     break;
                 default:
                     lblMysteryWord.ForeColor = Color.Black;
@@ -149,7 +151,7 @@ namespace MeltingSnowmanApp
             picbox4.ImageLocation = path + "SnowmanPicture4.png";
             picbox5.ImageLocation = path + "SnowmanPicture5.png";
             picbox6.ImageLocation = path + "SnowmanPicture6.png";
-            GetMysteryWordForeColor();
+            GetForeColor();
             GetMysteryWord();
         }
 
