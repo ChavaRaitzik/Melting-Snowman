@@ -613,9 +613,9 @@
             // tblSnowman
             // 
             tblSnowman.ColumnCount = 3;
-            tblSnowman.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
-            tblSnowman.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            tblSnowman.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tblSnowman.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblSnowman.ColumnStyles.Add(new ColumnStyle());
+            tblSnowman.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tblSnowman.Controls.Add(picbox2, 1, 1);
             tblSnowman.Controls.Add(picbox3, 1, 2);
             tblSnowman.Controls.Add(picbox4, 1, 3);
@@ -639,7 +639,7 @@
             // picbox2
             // 
             picbox2.Dock = DockStyle.Fill;
-            picbox2.Location = new Point(69, 74);
+            picbox2.Location = new Point(70, 74);
             picbox2.Margin = new Padding(0);
             picbox2.Name = "picbox2";
             picbox2.Size = new Size(325, 70);
@@ -650,7 +650,7 @@
             // picbox3
             // 
             picbox3.Dock = DockStyle.Fill;
-            picbox3.Location = new Point(69, 144);
+            picbox3.Location = new Point(70, 144);
             picbox3.Margin = new Padding(0);
             picbox3.Name = "picbox3";
             picbox3.Size = new Size(325, 66);
@@ -661,7 +661,7 @@
             // picbox4
             // 
             picbox4.Dock = DockStyle.Fill;
-            picbox4.Location = new Point(69, 210);
+            picbox4.Location = new Point(70, 210);
             picbox4.Margin = new Padding(0);
             picbox4.Name = "picbox4";
             picbox4.Size = new Size(325, 70);
@@ -672,7 +672,7 @@
             // picbox5
             // 
             picbox5.Dock = DockStyle.Fill;
-            picbox5.Location = new Point(69, 280);
+            picbox5.Location = new Point(70, 280);
             picbox5.Margin = new Padding(0);
             picbox5.Name = "picbox5";
             picbox5.Size = new Size(325, 78);
@@ -683,7 +683,7 @@
             // picbox6
             // 
             picbox6.Dock = DockStyle.Fill;
-            picbox6.Location = new Point(69, 358);
+            picbox6.Location = new Point(70, 358);
             picbox6.Margin = new Padding(0);
             picbox6.Name = "picbox6";
             picbox6.Size = new Size(325, 82);
@@ -695,7 +695,7 @@
             // 
             picbox1.BackgroundImageLayout = ImageLayout.None;
             picbox1.Dock = DockStyle.Fill;
-            picbox1.Location = new Point(69, 0);
+            picbox1.Location = new Point(70, 0);
             picbox1.Margin = new Padding(0);
             picbox1.Name = "picbox1";
             picbox1.Size = new Size(325, 74);
