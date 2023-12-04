@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,12 @@ namespace MeltingSnowmanApp
         List<PictureBox> lstpictureboxes;
         List<String> lstmessagegamewon = new() { "You Won!", "Great Job!", "Congratulations!" };
         List<String> lstmessagegamelost = new() { "Better Luck Next Time", "Too Many Incorrect Guesses", "Try Again" };
+        List<String> lstmessagegiveup = new() { "Never give up", "Next time, just try your best", "Was that really so hard?"};
 
         WordGenerator wordgenerator = new();
 
         Random rnd = new();
-        enum GameStatusEnum { NotStarted, Playing, GameWon, GameLost }
+        enum GameStatusEnum { NotStarted, Playing, GameWon, GameLost, GiveUp }
         GameStatusEnum gamestatus = GameStatusEnum.NotStarted;
 
         string mysteryword = "";
@@ -45,6 +47,8 @@ namespace MeltingSnowmanApp
             lstabcbuttons = new() { btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ };
             lstpictureboxes = new() { picbox1, picbox2, picbox3, picbox4, picbox5, picbox6 };
             btnStart.Click += BtnStart_Click;
+            btnGiveUp.Enabled = false;
+            btnGiveUp.Click += BtnGiveUp_Click;
             lstabcbuttons.ForEach(b => { b.Click += ABCButton_Click; });
         }
 
@@ -73,7 +77,8 @@ namespace MeltingSnowmanApp
                         lblMysteryWord.Text = lblMysteryWord.Text.Insert(i, letter.ToString());
                     }
                 }
-                    //SM Use replace()
+                //SM Use replace()
+                //I tried using replace(), but it either replaced all blanks with the guessed letter, or it removed all the blanks and it just displayed the guessed letter.....
             }
             else
             {
@@ -114,27 +119,34 @@ namespace MeltingSnowmanApp
                     lstmessage = lstmessagegamelost;
                     lblMysteryWord.Text = mysteryword;
                     break;
+                case GameStatusEnum.GiveUp:
+                    score = score - 1;
+                    lstmessage = lstmessagegiveup;
+                    lblMysteryWord.Text = mysteryword;
+                    break;
             }
+            btnGiveUp.Enabled = false;
             txtScoreBox.Text = score.ToString();
             lblMessageBox.Text = lstmessage[rnd.Next(0, lstmessage.Count)];
         }
 
         private void GetForeColor()
         {
+            Color color = Color.Black;
             switch (gamestatus)
             {
                 case GameStatusEnum.GameWon:
-                    lblMysteryWord.ForeColor = Color.LimeGreen;
-                    lblMessageBox.ForeColor = Color.LimeGreen;
+                    color = Color.LimeGreen;
                     break;
                 case GameStatusEnum.GameLost:
-                    lblMysteryWord.ForeColor = Color.Red;
-                    lblMessageBox.ForeColor= Color.Red;
+                    color = Color.Red;
                     break;
-                default:
-                    lblMysteryWord.ForeColor = Color.Black;
+                case GameStatusEnum.GiveUp:
+                    color = Color.Orange;
                     break;
             }
+            lblMysteryWord.ForeColor = color;
+            lblMessageBox.ForeColor = color;
 
         }
 
@@ -143,6 +155,7 @@ namespace MeltingSnowmanApp
             gamestatus = GameStatusEnum.Playing;
             lstabcbuttons.ForEach(b => b.BackColor = Color.DarkBlue);
             lstabcbuttons.ForEach(b => b.Enabled = true);
+            btnGiveUp.Enabled = true;
             lblMessageBox.Text = "";
             lblMysteryWord.Text = "";
             picbox1.ImageLocation = path + "SnowmanPicture1.png";
@@ -171,6 +184,13 @@ namespace MeltingSnowmanApp
                     DetectGameWonOrLost();
                 }
             }
+        }
+
+        private void BtnGiveUp_Click(object? sender, EventArgs e)
+        {
+            gamestatus = GameStatusEnum.GiveUp;
+            GetScore();
+            GetForeColor();
         }
 
     }

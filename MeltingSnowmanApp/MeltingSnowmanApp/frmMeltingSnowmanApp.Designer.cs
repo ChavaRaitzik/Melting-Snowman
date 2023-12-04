@@ -35,6 +35,7 @@
             txtScoreBox = new TextBox();
             lblMessageBox = new Label();
             txtScore = new TextBox();
+            btnGiveUp = new Button();
             tblMiddle = new TableLayoutPanel();
             tblABC = new TableLayoutPanel();
             btnA = new Button();
@@ -127,17 +128,20 @@
             // 
             // tblToolbar
             // 
-            tblToolbar.ColumnCount = 6;
-            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13F));
-            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.5F));
-            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62F));
-            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.5F));
-            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13F));
-            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7F));
+            tblToolbar.ColumnCount = 8;
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1988487F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 0.696069837F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1988506F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.15362453F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.409893F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.15362453F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.1589441F));
+            tblToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.03014946F));
             tblToolbar.Controls.Add(btnStart, 0, 0);
-            tblToolbar.Controls.Add(txtScoreBox, 5, 0);
-            tblToolbar.Controls.Add(lblMessageBox, 2, 0);
-            tblToolbar.Controls.Add(txtScore, 4, 0);
+            tblToolbar.Controls.Add(txtScoreBox, 7, 0);
+            tblToolbar.Controls.Add(lblMessageBox, 4, 0);
+            tblToolbar.Controls.Add(txtScore, 6, 0);
+            tblToolbar.Controls.Add(btnGiveUp, 2, 0);
             tblToolbar.Dock = DockStyle.Fill;
             tblToolbar.Location = new Point(25, 109);
             tblToolbar.Name = "tblToolbar";
@@ -150,11 +154,11 @@
             // 
             btnStart.BackColor = Color.Black;
             btnStart.Dock = DockStyle.Fill;
-            btnStart.Font = new Font("Constantia", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStart.Font = new Font("Constantia", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnStart.ForeColor = Color.White;
             btnStart.Location = new Point(3, 3);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(106, 51);
+            btnStart.Size = new Size(90, 51);
             btnStart.TabIndex = 0;
             btnStart.Text = "START";
             btnStart.UseVisualStyleBackColor = false;
@@ -163,13 +167,13 @@
             // 
             txtScoreBox.BackColor = Color.Black;
             txtScoreBox.Dock = DockStyle.Fill;
-            txtScoreBox.Font = new Font("Constantia", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            txtScoreBox.Font = new Font("Constantia", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtScoreBox.ForeColor = Color.White;
-            txtScoreBox.Location = new Point(800, 3);
+            txtScoreBox.Location = new Point(807, 3);
             txtScoreBox.Margin = new Padding(0, 3, 3, 3);
             txtScoreBox.Multiline = true;
             txtScoreBox.Name = "txtScoreBox";
-            txtScoreBox.Size = new Size(59, 51);
+            txtScoreBox.Size = new Size(52, 51);
             txtScoreBox.TabIndex = 1;
             // 
             // lblMessageBox
@@ -177,11 +181,11 @@
             lblMessageBox.AutoSize = true;
             lblMessageBox.BorderStyle = BorderStyle.FixedSingle;
             lblMessageBox.Dock = DockStyle.Fill;
-            lblMessageBox.Font = new Font("Constantia", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMessageBox.Font = new Font("Constantia", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             lblMessageBox.ForeColor = Color.FromArgb(64, 0, 64);
-            lblMessageBox.Location = new Point(136, 0);
+            lblMessageBox.Location = new Point(219, 0);
             lblMessageBox.Name = "lblMessageBox";
-            lblMessageBox.Size = new Size(528, 57);
+            lblMessageBox.Size = new Size(454, 57);
             lblMessageBox.TabIndex = 2;
             lblMessageBox.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -189,15 +193,28 @@
             // 
             txtScore.BackColor = Color.Black;
             txtScore.Dock = DockStyle.Fill;
-            txtScore.Font = new Font("Constantia", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            txtScore.Font = new Font("Constantia", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtScore.ForeColor = Color.White;
-            txtScore.Location = new Point(691, 3);
+            txtScore.Location = new Point(697, 3);
             txtScore.Margin = new Padding(3, 3, 0, 3);
             txtScore.Multiline = true;
             txtScore.Name = "txtScore";
-            txtScore.Size = new Size(109, 51);
+            txtScore.Size = new Size(110, 51);
             txtScore.TabIndex = 3;
             txtScore.Text = "SCORE:";
+            // 
+            // btnGiveUp
+            // 
+            btnGiveUp.BackColor = Color.Black;
+            btnGiveUp.Dock = DockStyle.Fill;
+            btnGiveUp.Font = new Font("Constantia", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGiveUp.ForeColor = Color.White;
+            btnGiveUp.Location = new Point(105, 3);
+            btnGiveUp.Name = "btnGiveUp";
+            btnGiveUp.Size = new Size(90, 51);
+            btnGiveUp.TabIndex = 4;
+            btnGiveUp.Text = "GIVE UP";
+            btnGiveUp.UseVisualStyleBackColor = false;
             // 
             // tblMiddle
             // 
@@ -785,5 +802,6 @@
         private Label lblMessageBox;
         private Label lblMysteryWord;
         private TextBox txtScore;
+        private Button btnGiveUp;
     }
 }
