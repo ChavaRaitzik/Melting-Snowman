@@ -63,6 +63,7 @@ namespace MeltingSnowmanApp
         {
             char letter = char.Parse(btn.Text.ToLower());
             btn.Enabled = false;
+            btnStart.Enabled = false;
             if (mysteryword.Contains(letter))
             {
                 btn.BackColor = Color.LimeGreen;
@@ -126,6 +127,7 @@ namespace MeltingSnowmanApp
                     break;
             }
             btnGiveUp.Enabled = false;
+            btnStart.Enabled = true;
             txtScoreBox.Text = score.ToString();
             lblMessageBox.Text = lstmessage[rnd.Next(0, lstmessage.Count)];
         }
