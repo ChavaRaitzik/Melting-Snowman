@@ -67,9 +67,6 @@ namespace MeltingSnowmanApp
             if (mysteryword.Contains(letter))
             {
                 btn.BackColor = Color.LimeGreen;
-                //SM Why do you need this variable? You never use it.
-                //SM Why do you need two loops? Use one loop and every time you find the letter just replace the mysteryword[i] in lblMysteryWord with the letter.
-                //The same as you d in 2 loops you should be able to do in one loop
                 for (int i = 0; i < mysteryword.Length; i++)
                 {
                     if (mysteryword[i] == letter)
@@ -80,6 +77,7 @@ namespace MeltingSnowmanApp
                 }
                 //SM Use replace()
                 //I tried using replace(), but it either replaced all blanks with the guessed letter, or it removed all the blanks and it just displayed the guessed letter.....
+                //SM Get it.
             }
             else
             {
@@ -94,6 +92,7 @@ namespace MeltingSnowmanApp
             if (lblMysteryWord.Text == mysteryword)
             {
                 gamestatus = GameStatusEnum.GameWon;
+                //SM This can be after the if statement with the GetForeColor() procedure.
                 GetScore();
             }
             else if (lstpictureboxes.TrueForAll(pb => pb.Image == null))
