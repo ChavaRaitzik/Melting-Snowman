@@ -58,6 +58,7 @@ namespace MeltingSnowmanApp
         private void GuessALetter(Button btn)
         {
             char letter = char.Parse(btn.Text.ToLower());
+            btn.Enabled = false;
             if (mysteryword.Contains(letter))
             {
                 btn.BackColor = Color.LimeGreen;
@@ -147,6 +148,7 @@ namespace MeltingSnowmanApp
         {
             gamestatus = GameStatusEnum.Playing;
             lstabcbuttons.ForEach(b => b.BackColor = Color.DarkBlue);
+            lstabcbuttons.ForEach(b => b.Enabled = true);
             lblMessageBox.Text = "";
             lblMysteryWord.Text = "";
             picbox1.ImageLocation = path + "SnowmanPicture1.png";
