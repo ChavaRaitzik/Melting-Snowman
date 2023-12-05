@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMeltingSnowmanApp));
             tblMain = new TableLayoutPanel();
             lblMeltingSnowman = new Label();
             tblToolbar = new TableLayoutPanel();
@@ -739,6 +740,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 798);
             Controls.Add(tblMain);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMeltingSnowmanApp";
             Text = "Melting Snowman";
             tblMain.ResumeLayout(false);

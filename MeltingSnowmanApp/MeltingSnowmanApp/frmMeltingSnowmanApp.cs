@@ -23,7 +23,7 @@ namespace MeltingSnowmanApp
         List<PictureBox> lstpictureboxes;
         List<String> lstmessagegamewon = new() { "You Won!", "Great Job!", "Congratulations!" };
         List<String> lstmessagegamelost = new() { "Better Luck Next Time", "Too Many Incorrect Guesses", "Try Again" };
-        List<String> lstmessagegiveup = new() { "Never give up", "Next time, just try your best", "Was that really so hard?"};
+        List<String> lstmessagegiveup = new() { "Never give up", "Next time, just try your best", "Was that really so hard?" };
 
         WordGenerator wordgenerator = new();
 
@@ -64,6 +64,7 @@ namespace MeltingSnowmanApp
             char letter = char.Parse(btn.Text.ToLower());
             btn.Enabled = false;
             btnStart.Enabled = false;
+            btnGiveUp.Enabled = true;
             if (mysteryword.Contains(letter))
             {
                 btn.BackColor = Color.LimeGreen;
@@ -75,9 +76,6 @@ namespace MeltingSnowmanApp
                         lblMysteryWord.Text = lblMysteryWord.Text.Insert(i, letter.ToString());
                     }
                 }
-                //SM Use replace()
-                //I tried using replace(), but it either replaced all blanks with the guessed letter, or it removed all the blanks and it just displayed the guessed letter.....
-                //SM Get it.
             }
             else
             {
@@ -92,7 +90,6 @@ namespace MeltingSnowmanApp
             if (lblMysteryWord.Text == mysteryword)
             {
                 gamestatus = GameStatusEnum.GameWon;
-                //SM This can be after the if statement with the GetForeColor() procedure.
                 GetScore();
             }
             else if (lstpictureboxes.TrueForAll(pb => pb.Image == null))
@@ -156,7 +153,6 @@ namespace MeltingSnowmanApp
             gamestatus = GameStatusEnum.Playing;
             lstabcbuttons.ForEach(b => b.BackColor = Color.DarkBlue);
             lstabcbuttons.ForEach(b => b.Enabled = true);
-            btnGiveUp.Enabled = true;
             lblMessageBox.Text = "";
             lblMysteryWord.Text = "";
             picbox1.ImageLocation = path + "SnowmanPicture1.png";
