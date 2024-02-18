@@ -174,6 +174,7 @@
             txtScoreBox.Margin = new Padding(0, 3, 3, 3);
             txtScoreBox.Multiline = true;
             txtScoreBox.Name = "txtScoreBox";
+            txtScoreBox.ReadOnly = true;
             txtScoreBox.Size = new Size(52, 51);
             txtScoreBox.TabIndex = 1;
             // 
@@ -200,6 +201,7 @@
             txtScore.Margin = new Padding(3, 3, 0, 3);
             txtScore.Multiline = true;
             txtScore.Name = "txtScore";
+            txtScore.ReadOnly = true;
             txtScore.Size = new Size(110, 51);
             txtScore.TabIndex = 3;
             txtScore.Text = "SCORE:";
