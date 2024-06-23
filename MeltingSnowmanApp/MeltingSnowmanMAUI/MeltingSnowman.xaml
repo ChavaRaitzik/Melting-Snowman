@@ -6,43 +6,43 @@
     <Grid x:Name="gMain" ColumnDefinitions="*" RowDefinitions="Auto,Auto,Auto,Auto">
         <Label x:Name="lblMeltingSnowman" Text="Melting Snowman" HorizontalTextAlignment="Center" FontFamily="ALGERIAN" FontSize="36" FontAttributes="Bold" TextColor="DarkSlateBlue" Grid.Row="0" Grid.Column="0"/>
         <Grid x:Name="gToolbar" Margin="15,0,15,0" ColumnDefinitions="*,*,2*,*,.5*" RowDefinitions="Auto" Grid.Row="1" Grid.Column="0">
-                <Button x:Name="btnStart" Text="START" BackgroundColor="Black" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
-            <Button x:Name="btnGiveUp" Text="GIVE UP" BackgroundColor="Black" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
+            <Button x:Name="btnStart" Text="START" Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="btnGiveUp" Text="GIVE UP" Grid.Row="0" Grid.Column="1"/>
             <Frame MaximumHeightRequest="40" Grid.Row="0" Grid.Column="2">
-                    <Label x:Name="lblMessageBox" HorizontalTextAlignment="Center"/>
-                </Frame>
-            <Entry x:Name="txtScore" Text="SCORE" HorizontalTextAlignment="Center" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="3"/>
-            <Entry x:Name="txtScoreBox" HorizontalTextAlignment="Center" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="4"/>
+                <Label x:Name="lblMessageBox" HorizontalTextAlignment="Center"/>
+            </Frame>
+            <Entry x:Name="txtScore" Text="SCORE" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            <Entry x:Name="txtScoreBox" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="4"/>
+        </Grid>
+        <Grid x:Name="gMiddle" Margin="10" ColumnDefinitions="*,*" RowDefinitions="*" Grid.Row="2" Grid.Column="0">
+            <Grid x:Name="gABC" ColumnDefinitions="*,Auto,Auto,Auto,Auto,3*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" Grid.Row="0" Grid.Column="0">
+                <Button x:Name="btnA" Text="A" Style="{StaticResource Key=abc-button}" Grid.Row="0" Grid.Column="1"/>
+                <Button x:Name="btnB" Text="B" Style="{StaticResource Key=abc-button}" Grid.Row="0" Grid.Column="2"/>
+                <Button x:Name="btnC" Text="C" Style="{StaticResource Key=abc-button}" Grid.Row="0" Grid.Column="3"/>
+                <Button x:Name="btnD" Text="D" Style="{StaticResource Key=abc-button}" Grid.Row="0" Grid.Column="4"/>
+                <Button x:Name="btnE" Text="E" Style="{StaticResource Key=abc-button}" Grid.Row="1" Grid.Column="1"/>
+                <Button x:Name="btnF" Text="F" Style="{StaticResource Key=abc-button}" Grid.Row="1" Grid.Column="2"/>
+                <Button x:Name="btnG" Text="G" Style="{StaticResource Key=abc-button}" Grid.Row="1" Grid.Column="3"/>
+                <Button x:Name="btnH" Text="H" Style="{StaticResource Key=abc-button}" Grid.Row="1" Grid.Column="4"/>
+                <Button x:Name="btnI" Text="I" Style="{StaticResource Key=abc-button}" Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="btnJ" Text="J" Style="{StaticResource Key=abc-button}" Grid.Row="2" Grid.Column="2"/>
+                <Button x:Name="btnK" Text="K" Style="{StaticResource Key=abc-button}" Grid.Row="2" Grid.Column="3"/>
+                <Button x:Name="btnL" Text="L" Style="{StaticResource Key=abc-button}" Grid.Row="2" Grid.Column="4"/>
+                <Button x:Name="btnM" Text="M" Style="{StaticResource Key=abc-button}" Grid.Row="3" Grid.Column="1"/>
+                <Button x:Name="btnN" Text="N" Style="{StaticResource Key=abc-button}" Grid.Row="3" Grid.Column="2"/>
+                <Button x:Name="btnO" Text="O" Style="{StaticResource Key=abc-button}" Grid.Row="3" Grid.Column="3"/>
+                <Button x:Name="btnP" Text="P" Style="{StaticResource Key=abc-button}" Grid.Row="3" Grid.Column="4"/>
+                <Button x:Name="btnQ" Text="Q" Style="{StaticResource Key=abc-button}" Grid.Row="4" Grid.Column="1"/>
+                <Button x:Name="btnR" Text="R" Style="{StaticResource Key=abc-button}" Grid.Row="4" Grid.Column="2"/>
+                <Button x:Name="btnS" Text="S" Style="{StaticResource Key=abc-button}" Grid.Row="4" Grid.Column="3"/>
+                <Button x:Name="btnT" Text="T" Style="{StaticResource Key=abc-button}" Grid.Row="4" Grid.Column="4"/>
+                <Button x:Name="btnU" Text="U" Style="{StaticResource Key=abc-button}" Grid.Row="5" Grid.Column="1"/>
+                <Button x:Name="btnV" Text="V" Style="{StaticResource Key=abc-button}" Grid.Row="5" Grid.Column="2"/>
+                <Button x:Name="btnW" Text="W" Style="{StaticResource Key=abc-button}" Grid.Row="5" Grid.Column="3"/>
+                <Button x:Name="btnX" Text="X" Style="{StaticResource Key=abc-button}" Grid.Row="5" Grid.Column="4"/>
+                <Button x:Name="btnY" Text="Y" Style="{StaticResource Key=abc-button}" Grid.Row="6" Grid.Column="2"/>
+                <Button x:Name="btnZ" Text="Z" Style="{StaticResource Key=abc-button}" Grid.Row="6" Grid.Column="3"/>
             </Grid>
-            <Grid x:Name="gMiddle" Margin="10" ColumnDefinitions="*,*" RowDefinitions="*" Grid.Row="2" Grid.Column="0">
-                <Grid x:Name="gABC" ColumnDefinitions="*,Auto,Auto,Auto,Auto,3*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" Grid.Row="0" Grid.Column="0">
-                    <Button x:Name="btnA" Text="A" Style="{StaticResource Key=abc-button}" Grid.Row="0" Grid.Column="1"/>
-                    <Button x:Name="btnB" Text="B" Style="{StaticResource Key=abc-button}" Grid.Row="0" Grid.Column="2"/>
-                    <Button x:Name="btnC" Text="C" Style="{StaticResource Key=abc-button}" Grid.Row="0" Grid.Column="3"/>
-                    <Button x:Name="btnD" Text="D" Style="{StaticResource Key=abc-button}" Grid.Row="0" Grid.Column="4"/>
-                    <Button x:Name="btnE" Text="E" Style="{StaticResource Key=abc-button}" Grid.Row="1" Grid.Column="1"/>
-                    <Button x:Name="btnF" Text="F" Style="{StaticResource Key=abc-button}" Grid.Row="1" Grid.Column="2"/>
-                    <Button x:Name="btnG" Text="G" Style="{StaticResource Key=abc-button}" Grid.Row="1" Grid.Column="3"/>
-                    <Button x:Name="btnH" Text="H" Style="{StaticResource Key=abc-button}" Grid.Row="1" Grid.Column="4"/>
-                    <Button x:Name="btnI" Text="I" Style="{StaticResource Key=abc-button}" Grid.Row="2" Grid.Column="1"/>
-                    <Button x:Name="btnJ" Text="J" Style="{StaticResource Key=abc-button}" Grid.Row="2" Grid.Column="2"/>
-                    <Button x:Name="btnK" Text="K" Style="{StaticResource Key=abc-button}" Grid.Row="2" Grid.Column="3"/>
-                    <Button x:Name="btnL" Text="L" Style="{StaticResource Key=abc-button}" Grid.Row="2" Grid.Column="4"/>
-                    <Button x:Name="btnM" Text="M" Style="{StaticResource Key=abc-button}" Grid.Row="3" Grid.Column="1"/>
-                    <Button x:Name="btnN" Text="N" Style="{StaticResource Key=abc-button}" Grid.Row="3" Grid.Column="2"/>
-                    <Button x:Name="btnO" Text="O" Style="{StaticResource Key=abc-button}" Grid.Row="3" Grid.Column="3"/>
-                    <Button x:Name="btnP" Text="P" Style="{StaticResource Key=abc-button}" Grid.Row="3" Grid.Column="4"/>
-                    <Button x:Name="btnQ" Text="Q" Style="{StaticResource Key=abc-button}" Grid.Row="4" Grid.Column="1"/>
-                    <Button x:Name="btnR" Text="R" Style="{StaticResource Key=abc-button}" Grid.Row="4" Grid.Column="2"/>
-                    <Button x:Name="btnS" Text="S" Style="{StaticResource Key=abc-button}" Grid.Row="4" Grid.Column="3"/>
-                    <Button x:Name="btnT" Text="T" Style="{StaticResource Key=abc-button}" Grid.Row="4" Grid.Column="4"/>
-                    <Button x:Name="btnU" Text="U" Style="{StaticResource Key=abc-button}" Grid.Row="5" Grid.Column="1"/>
-                    <Button x:Name="btnV" Text="V" Style="{StaticResource Key=abc-button}" Grid.Row="5" Grid.Column="2"/>
-                    <Button x:Name="btnW" Text="W" Style="{StaticResource Key=abc-button}" Grid.Row="5" Grid.Column="3"/>
-                    <Button x:Name="btnX" Text="X" Style="{StaticResource Key=abc-button}" Grid.Row="5" Grid.Column="4"/>
-                    <Button x:Name="btnY" Text="Y" Style="{StaticResource Key=abc-button}" Grid.Row="6" Grid.Column="2"/>
-                    <Button x:Name="btnZ" Text="Z" Style="{StaticResource Key=abc-button}" Grid.Row="6" Grid.Column="3"/>
-                </Grid>
             <Grid x:Name="gSnowman" ColumnDefinitions="*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" Grid.Row="0" Grid.Column="1" RowSpacing="0">
                 <Image Source="snowman1picture.png" WidthRequest="330" Grid.Column="0" Grid.Row="0"/>
                 <Image Source="snowman2picture.png" WidthRequest="330" Grid.Column="0" Grid.Row="1"/>
@@ -52,8 +52,8 @@
                 <Image Source="snowman6picture.png" WidthRequest="330" Grid.Column="0" Grid.Row="5"/>
             </Grid>
         </Grid>
-            <Frame Margin="15,0,15,0" Grid.Row="3" Grid.Column="0">
-                <Label x:Name="lblMysteryWord" HorizontalTextAlignment="Center"/>
-            </Frame>
+        <Frame Margin="15,0,15,0" Grid.Row="3" Grid.Column="0">
+            <Label x:Name="lblMysteryWord" HorizontalTextAlignment="Center"/>
+        </Frame>
     </Grid>
 </ContentPage>
