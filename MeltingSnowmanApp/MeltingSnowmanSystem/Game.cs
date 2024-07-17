@@ -9,21 +9,21 @@ namespace MeltingSnowmanSystem
         public event PropertyChangedEventHandler? PropertyChanged;
         public enum GameStatusEnum { NotStarted, Playing, GameWon, GameLost, GiveUp }
 
-        private WordGenerator wordgenerator = new();
+        WordGenerator wordgenerator = new();
 
-        private Random rnd = new();
+        Random rnd = new();
 
-        private GameStatusEnum _gamestatus = GameStatusEnum.NotStarted;
+        GameStatusEnum _gamestatus = GameStatusEnum.NotStarted;
 
-        private string _dash = "";
+        string _dash = "";
 
-        private Word _worddisplay = new Word();
+        Word _worddisplay = new Word();
 
-        private int _score = 0;
+        int _score = 0;
 
-        private Message _message = new Message();
+        Message _message = new Message();
 
-        private Word _word = new Word();
+        Word _word = new Word();
 
         public Game()
         {

@@ -5,7 +5,7 @@ namespace MeltingSnowmanSystem
 {
     public class Letter : INotifyPropertyChanged
     {
-        private string _lettervalue = "";
+        string _lettervalue = "";
         System.Drawing.Color _backcolor;
 
 

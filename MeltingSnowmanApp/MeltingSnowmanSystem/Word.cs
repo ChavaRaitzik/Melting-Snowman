@@ -5,7 +5,7 @@ namespace MeltingSnowmanSystem
 {
     public class Word : INotifyPropertyChanged
     {
-        private string _wordvalue = "";
+        string _wordvalue = "";
         System.Drawing.Color _color;
 
         public event PropertyChangedEventHandler? PropertyChanged;
