@@ -57,28 +57,7 @@ namespace MeltingSnowmanSystem
             Letters[23].LetterValue = "X";
             Letters[24].LetterValue = "Y";
             Letters[25].LetterValue = "Z";
-
-            for(int i = 0; i < 3; i++)
-            {
-                this.GameWonMessages.Add(new Message() {Color = DisplayWinningColor});
-            }
-            GameWonMessages[0].MessageText = "You Won";
-            GameWonMessages[1].MessageText = "Great Job!";
-            GameWonMessages[2].MessageText = "Congratulations!";
-            for(int i=0; i < 3; i++)
-            {
-                this.GameLostMessages.Add(new Message() { Color = DisplayLosingColor });
-            }
-            GameLostMessages[0].MessageText = "Better Luck Next Time";
-            GameLostMessages[1].MessageText = "Too Many Incorrect Guesses";
-            GameLostMessages[2].MessageText = "Try Again";
-            for (int i = 0; i < 3; i++)
-            {
-                this.GiveUpMessages.Add(new Message() { Color = DisplayGiveUpColor });
-            }
-            GiveUpMessages[0].MessageText = "Never Give Up";
-            GiveUpMessages[1].MessageText = "Nex time, just try your best";
-            GiveUpMessages[2].MessageText = "Was that really so hard?";
+            this.Letters.ForEach(l => l.BackColor = LetterStandardColor);
 
             MysteryWords = wordgenerator.GetWords(WordGenerator.PartOfSpeech.noun, 1000);
         }
@@ -92,12 +71,12 @@ namespace MeltingSnowmanSystem
         }
         public List<String> MysteryWords { get; private set; } = new();
         public List<Letter> Letters { get; private set; } = new();
-        public List<Message> GameWonMessages { get; private set; } = new();
-        public List<Message> GameLostMessages { get; private set; } = new();
-        public List<Message> GiveUpMessages { get; private set; } = new();
-        public List<String> Pictures { get; private set; } = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png", };
+        public List<String> GameWonMessages { get; private set; } = new() { "You Won!", "Great Job!", "Congratulations!" };
+        public List<String> GameLostMessages { get; private set; } = new() { "Better Luck Next Time", "Too Many Incorrect Guesses", "Try Again" };
+        public List<String> GiveUpMessages { get; private set; } = new() { "Never give up", "Next time, just try your best", "Was that really so hard?" };
+        public List<String> Pictures { get; private set; } = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
 
-        public Word Word
+    public Word Word
         {
             get => _word;
             private set
@@ -207,30 +186,37 @@ namespace MeltingSnowmanSystem
             GetScore();
         }
 
+        public void GiveUp()
+        {
+            this.GameStatus = GameStatusEnum.GiveUp;
+            GetScore();
+        }
+
         public void GetScore()
         {
-            List<Message> Messages = new();
             switch (GameStatus)
             {
                 case GameStatusEnum.GameWon:
                     this.Score += 1;
-                    Messages = GameWonMessages;
+                    this.Message.MessageText = GameWonMessages[rnd.Next(0, GameWonMessages.Count)];
+                    this.Message.Color = DisplayWinningColor;
                     this.WordDisplay.Color = DisplayWinningColor;
                     break;
                 case GameStatusEnum.GameLost:
                     this.Score -= 1;
-                    Messages = GameLostMessages;
+                    this.Message.MessageText = GameLostMessages[rnd.Next(0, GameLostMessages.Count)];
+                    this.Message.Color = DisplayLosingColor;
                     this.WordDisplay.WordValue = Word.WordValue;
                     this.WordDisplay.Color = DisplayLosingColor;
                     break;
                 case GameStatusEnum.GiveUp:
                     this.Score -= 1;
-                    Messages = GiveUpMessages;
+                    this.Message.MessageText = GiveUpMessages[rnd.Next(0, GiveUpMessages.Count)];
+                    this.Message.Color = DisplayGiveUpColor;
                     this.WordDisplay.WordValue = Word.WordValue;
                     this.WordDisplay.Color = DisplayGiveUpColor;
                     break;
             }
-            this.Message = Messages[rnd.Next(0, Messages.Count)];
         }
 
         private void InvokePropertyChanged([CallerMemberName] string propertyname = "")

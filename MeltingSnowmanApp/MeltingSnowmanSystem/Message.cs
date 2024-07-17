@@ -5,10 +5,18 @@ namespace MeltingSnowmanSystem
 {
     public class Message: INotifyPropertyChanged
     {
+        private string _messagetext = "";
         System.Drawing.Color _color;
 
         public event PropertyChangedEventHandler? PropertyChanged;
-        public string MessageText { get; set; } 
+        public string MessageText 
+        { 
+            get => _messagetext; set
+            {
+                _messagetext = value;
+                this.InvokePropertyChanged();
+            } 
+        } 
 
         public System.Drawing.Color Color
         {

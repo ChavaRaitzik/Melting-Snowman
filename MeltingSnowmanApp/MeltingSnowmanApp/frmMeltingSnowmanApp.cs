@@ -1,156 +1,99 @@
-﻿using CrypticWizard.RandomWordGenerator;
+﻿using MeltingSnowmanSystem;
+using static MeltingSnowmanSystem.Game;
 
 namespace MeltingSnowmanApp
 {
     public partial class frmMeltingSnowmanApp : Form
     {
+        Game game = new();
         string path = Application.StartupPath + @"\images\";
-
-        List<string> lstwords;
         List<Button> lstabcbuttons;
-        List<PictureBox> lstpictureboxes;
-        List<String> lstmessagegamewon = new() { "You Won!", "Great Job!", "Congratulations!" };
-        List<String> lstmessagegamelost = new() { "Better Luck Next Time", "Too Many Incorrect Guesses", "Try Again" };
-        List<String> lstmessagegiveup = new() { "Never give up", "Next time, just try your best", "Was that really so hard?" };
-
-        WordGenerator wordgenerator = new();
-
-        Random rnd = new();
-        enum GameStatusEnum { NotStarted, Playing, GameWon, GameLost, GiveUp }
-        GameStatusEnum gamestatus = GameStatusEnum.NotStarted;
-
-        string mysteryword = "";
-        string stars = "";
+        //List<PictureBox> lstpictureboxes;
 
         public frmMeltingSnowmanApp()
         {
             InitializeComponent();
-            picbox1.ImageLocation = path + "SnowmanPicture1.png";
-            picbox2.ImageLocation = path + "SnowmanPicture2.png";
-            picbox3.ImageLocation = path + "SnowmanPicture3.png";
-            picbox4.ImageLocation = path + "SnowmanPicture4.png";
-            picbox5.ImageLocation = path + "SnowmanPicture5.png";
-            picbox6.ImageLocation = path + "SnowmanPicture6.png";
-            lstwords = wordgenerator.GetWords(WordGenerator.PartOfSpeech.noun, 1000);
+            //picbox1.DataBindings.Add("ImageLocation", game, "PictureWithFullLocation");
+            picbox1.ImageLocation = path + game.Pictures[0];
+            picbox2.ImageLocation = path + game.Pictures[1];
+            picbox3.ImageLocation = path + game.Pictures[2];
+            picbox4.ImageLocation = path + game.Pictures[3];
+            picbox5.ImageLocation = path + game.Pictures[4];
+            picbox6.ImageLocation = path + game.Pictures[5];
             lstabcbuttons = new() { btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ };
-            lstpictureboxes = new() { picbox1, picbox2, picbox3, picbox4, picbox5, picbox6 };
+            //lstpictureboxes = new() { picbox1, picbox2, picbox3, picbox4, picbox5, picbox6 };
+            MeltingSnowmanSystem.Message message = game.Message;
+            lblMessageBox.DataBindings.Add("Text", message, "MessageText");
+            lblMessageBox.DataBindings.Add("ForeColor", message, "Color");
+            Word word = game.WordDisplay;
+            lblMysteryWord.DataBindings.Add("Text", word, "WordValue");
+            lblMysteryWord.DataBindings.Add("ForeColor", word, "Color");
+            txtScoreBox.DataBindings.Add("Text", game, "Score".ToString());
             btnStart.Click += BtnStart_Click;
             btnGiveUp.Enabled = false;
             btnGiveUp.Click += BtnGiveUp_Click;
-            lstabcbuttons.ForEach(b => { b.Click += ABCButton_Click; });
-        }
-
-        private void GetMysteryWord()
-        {
-            mysteryword = lstwords[rnd.Next(0, lstwords.Count)].ToLower();
-            stars = new string('-', mysteryword.Length);
-            lblMysteryWord.Text = stars;
-        }
-
-        private void GuessALetter(Button btn)
-        {
-            char letter = char.Parse(btn.Text.ToLower());
-            btn.Enabled = false;
-            btnStart.Enabled = false;
-            btnGiveUp.Enabled = true;
-            if (mysteryword.Contains(letter))
-            {
-                btn.BackColor = Color.LimeGreen;
-                for (int i = 0; i < mysteryword.Length; i++)
-                {
-                    if (mysteryword[i] == letter)
-                    {
-                        lblMysteryWord.Text = lblMysteryWord.Text.Remove(i, 1);
-                        lblMysteryWord.Text = lblMysteryWord.Text.Insert(i, letter.ToString());
-                    }
-                }
-            }
-            else
-            {
-                btn.BackColor = Color.Red;
-                PictureBox picturebox = lstpictureboxes.FirstOrDefault(pb => pb.Image != null);
-                picturebox.Image = null;
-            }
-        }
-
-        private void DetectGameWonOrLost()
-        {
-            if (lblMysteryWord.Text == mysteryword)
-            {
-                gamestatus = GameStatusEnum.GameWon;
-                GetScore();
-            }
-            else if (lstpictureboxes.TrueForAll(pb => pb.Image == null))
-            {
-                gamestatus = GameStatusEnum.GameLost;
-                GetScore();
-            }
-            GetForeColor();
-        }
-
-        private void GetScore()
-        {
-            int score = 0;
-            List<String> lstmessage = new();
-            int.TryParse(txtScoreBox.Text, out score);
-            switch (gamestatus)
-            {
-                case GameStatusEnum.GameWon:
-                    score = score + 1;
-                    lstmessage = lstmessagegamewon;
-                    break;
-                case GameStatusEnum.GameLost:
-                    score = score - 1;
-                    lstmessage = lstmessagegamelost;
-                    lblMysteryWord.Text = mysteryword;
-                    break;
-                case GameStatusEnum.GiveUp:
-                    score = score - 1;
-                    lstmessage = lstmessagegiveup;
-                    lblMysteryWord.Text = mysteryword;
-                    break;
-            }
-            btnGiveUp.Enabled = false;
-            btnStart.Enabled = true;
-            txtScoreBox.Text = score.ToString();
-            lblMessageBox.Text = lstmessage[rnd.Next(0, lstmessage.Count)];
-        }
-
-        private void GetForeColor()
-        {
-            Color color = Color.Black;
-            switch (gamestatus)
-            {
-                case GameStatusEnum.GameWon:
-                    color = Color.LimeGreen;
-                    break;
-                case GameStatusEnum.GameLost:
-                    color = Color.Red;
-                    break;
-                case GameStatusEnum.GiveUp:
-                    color = Color.Orange;
-                    break;
-            }
-            lblMysteryWord.ForeColor = color;
-            lblMessageBox.ForeColor = color;
-
+            lstabcbuttons.ForEach(b => { 
+                Letter letter = game.Letters[lstabcbuttons.IndexOf(b)];
+                b.Click += ABCButton_Click;
+                b.DataBindings.Add("Text", letter, "LetterValue");
+                b.DataBindings.Add("BackColor", letter, "BackColor");
+            });
         }
 
         private void NewGame()
         {
-            gamestatus = GameStatusEnum.Playing;
-            lstabcbuttons.ForEach(b => b.BackColor = Color.DarkBlue);
+            game.NewGame();
             lstabcbuttons.ForEach(b => b.Enabled = true);
-            lblMessageBox.Text = "";
-            lblMysteryWord.Text = "";
-            picbox1.ImageLocation = path + "SnowmanPicture1.png";
-            picbox2.ImageLocation = path + "SnowmanPicture2.png";
-            picbox3.ImageLocation = path + "SnowmanPicture3.png";
-            picbox4.ImageLocation = path + "SnowmanPicture4.png";
-            picbox5.ImageLocation = path + "SnowmanPicture5.png";
-            picbox6.ImageLocation = path + "SnowmanPicture6.png";
-            GetForeColor();
-            GetMysteryWord();
+            //picbox1.ImageLocation = path + "SnowmanPicture1.png";
+            //picbox2.ImageLocation = path + "SnowmanPicture2.png";
+            //picbox3.ImageLocation = path + "SnowmanPicture3.png";
+            //picbox4.ImageLocation = path + "SnowmanPicture4.png";
+            //picbox5.ImageLocation = path + "SnowmanPicture5.png";
+            //picbox6.ImageLocation = path + "SnowmanPicture6.png";
+        }
+
+        private void GuessALetter(Button btn)
+        {
+            btn.Enabled = false;
+            btnStart.Enabled = false;
+            btnGiveUp.Enabled = true;
+            Letter letter = game.Letters[lstabcbuttons.IndexOf(btn)];
+            game.GuessALetter(letter);
+            //char letter = char.Parse(btn.Text.ToLower());
+            //if (mysteryword.Contains(letter))
+            //{
+            //    btn.BackColor = Color.LimeGreen;
+            //    for (int i = 0; i < mysteryword.Length; i++)
+            //    {
+            //        if (mysteryword[i] == letter)
+            //        {
+            //            lblMysteryWord.Text = lblMysteryWord.Text.Remove(i, 1);
+            //            lblMysteryWord.Text = lblMysteryWord.Text.Insert(i, letter.ToString());
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    PictureBox picturebox = lstpictureboxes.FirstOrDefault(pb => pb.Image != null);
+            //    picturebox.Image = null;
+            //}
+        }
+
+        private void DetectGameWonOrLost()
+        {
+            game.DetectGameWonOrLost();
+            if (game.GameStatus != GameStatusEnum.Playing)
+            {
+                btnGiveUp.Enabled = false;
+                btnStart.Enabled = true;
+            }
+        }
+
+        private void GiveUp()
+        {
+            game.GiveUp();
+            btnGiveUp.Enabled = false;
+            btnStart.Enabled = true;
         }
 
         private void BtnStart_Click(object? sender, EventArgs e)
@@ -162,7 +105,7 @@ namespace MeltingSnowmanApp
         {
             if (sender is Button)
             {
-                if (gamestatus == GameStatusEnum.Playing)
+                if (game.GameStatus == GameStatusEnum.Playing)
                 {
                     Button btn = (Button)sender;
                     GuessALetter(btn);
@@ -173,9 +116,7 @@ namespace MeltingSnowmanApp
 
         private void BtnGiveUp_Click(object? sender, EventArgs e)
         {
-            gamestatus = GameStatusEnum.GiveUp;
-            GetScore();
-            GetForeColor();
+            GiveUp();
         }
 
     }

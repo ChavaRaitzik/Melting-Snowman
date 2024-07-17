@@ -62,7 +62,7 @@ namespace MeltingSnowmanTest
             game.DetectGameWonOrLost();
             int newscore = game.Score;
             string msg = $"Game Status = {game.GameStatus} Mystery Word Display = {game.WordDisplay.WordValue} Color = {game.WordDisplay.Color} Message = {game.Message.MessageText} Color = {game.Message.Color} Previous Score = {oldscore} New Score = {newscore} ";
-            Assert.IsTrue(game.GameStatus == Game.GameStatusEnum.GameWon && game.WordDisplay.WordValue == game.Word.WordValue && game.WordDisplay.Color == game.DisplayWinningColor && game.GameWonMessages.Contains(game.Message) == true && game.Message.Color == game.DisplayWinningColor && newscore > oldscore, msg);
+            Assert.IsTrue(game.GameStatus == Game.GameStatusEnum.GameWon && game.WordDisplay.WordValue == game.Word.WordValue && game.WordDisplay.Color == game.DisplayWinningColor && game.GameWonMessages.Contains(game.Message.MessageText) == true && game.Message.Color == game.DisplayWinningColor && newscore > oldscore, msg);
             TestContext.WriteLine(msg);
         }
 
@@ -85,7 +85,7 @@ namespace MeltingSnowmanTest
             game.DetectGameWonOrLost();
             int newscore = game.Score;
             string msg = $"Game Status = {game.GameStatus} Mystery Word Display = {game.WordDisplay.WordValue} Color = {game.WordDisplay.Color} Message = {game.Message.MessageText} Color = {game.Message.Color} Snowman is Melted = {b} Previous Score = {oldscore} New Score = {newscore} ";
-            Assert.IsTrue(game.GameStatus == Game.GameStatusEnum.GameLost && game.WordDisplay.WordValue == game.Word.WordValue && game.WordDisplay.Color == game.DisplayLosingColor && game.GameLostMessages.Contains(game.Message) == true && game.Message.Color == game.DisplayLosingColor && newscore < oldscore, msg);
+            Assert.IsTrue(game.GameStatus == Game.GameStatusEnum.GameLost && game.WordDisplay.WordValue == game.Word.WordValue && game.WordDisplay.Color == game.DisplayLosingColor && game.GameLostMessages.Contains(game.Message.MessageText) == true && game.Message.Color == game.DisplayLosingColor && newscore < oldscore, msg);
             TestContext.WriteLine(msg);
 
         }
