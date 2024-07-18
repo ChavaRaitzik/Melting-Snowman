@@ -52,8 +52,8 @@
                 <Image x:Name="imgsm6" Source="{Binding Pictures[5]}" WidthRequest="330" Grid.Column="0" Grid.Row="5"/>
             </Grid>
         </Grid>
-        <Frame Margin="15,0,15,0" Grid.Row="3" Grid.Column="0">
-            <Label x:Name="lblMysteryWord" BindingContext="{Binding WordDisplay}" Text="{Binding WordValue}" TextColor="{Binding ColorMAUI}" HorizontalTextAlignment="Center"/>
+        <Frame Margin="15,0,15,0" Padding="0" Grid.Row="3" Grid.Column="0">
+            <Label x:Name="lblMysteryWord" FontSize="36" FontAttributes="Bold" BindingContext="{Binding WordDisplay}" Text="{Binding WordValue}" TextColor="{Binding ColorMAUI}" HorizontalTextAlignment="Center"/>
         </Frame>
     </Grid>
 </ContentPage>

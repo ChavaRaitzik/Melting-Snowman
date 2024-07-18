@@ -183,16 +183,16 @@ namespace MeltingSnowmanSystem
             {
                 this.GameStatus = GameStatusEnum.GameLost;
             }
-            GetScore();
+            DisplayScore();
         }
 
         public void GiveUp()
         {
             this.GameStatus = GameStatusEnum.GiveUp;
-            GetScore();
+            DisplayScore();
         }
 
-        public void GetScore()
+        public void DisplayScore()
         {
             switch (GameStatus)
             {
