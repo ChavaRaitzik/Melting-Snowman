@@ -53,7 +53,7 @@
             </Grid>
         </Grid>
         <Frame Margin="15,0,15,0" Padding="0" Grid.Row="3" Grid.Column="0">
-            <Label x:Name="lblMysteryWord" FontSize="36" FontAttributes="Bold" BindingContext="{Binding WordDisplay}" Text="{Binding WordValue}" TextColor="{Binding ColorMAUI}" HorizontalTextAlignment="Center"/>
+            <Label x:Name="lblMysteryWord" HorizontalTextAlignment="Center" FontSize="36" FontAttributes="Bold" BindingContext="{Binding WordDisplay}" Text="{Binding WordValue}" TextColor="{Binding ColorMAUI}"/>
         </Frame>
     </Grid>
 </ContentPage>
