@@ -13,7 +13,7 @@ public partial class MeltingSnowman : ContentPage
         this.BindingContext = game;
         lstabcbuttons = new() { btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ };
         btnGiveUp.IsEnabled = false;
-        lstabcbuttons.ForEach(b => {Letter letter = game.Letters[lstabcbuttons.IndexOf(b)];});
+        //lstabcbuttons.ForEach(b => {Letter letter = game.Letters[lstabcbuttons.IndexOf(b)];});
     }
 
     private void NewGame()

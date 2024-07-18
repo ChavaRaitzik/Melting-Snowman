@@ -24,7 +24,7 @@ namespace MeltingSnowmanSystem
             {
                 _color = value;
                 this.InvokePropertyChanged();
-                this.InvokePropertyChanged("BackColorMaui");
+                this.InvokePropertyChanged("ColorMAUI");
             }
         }
 
