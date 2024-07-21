@@ -23,11 +23,11 @@ public partial class MeltingSnowman : ContentPage
 
     private void GuessALetter(Button btn)
     {
+        Letter letter = game.Letters[lstabcbuttons.IndexOf(btn)];
+        game.GuessALetter(letter);
         btn.IsEnabled = false;
         btnStart.IsEnabled = false;
         btnGiveUp.IsEnabled = true;
-        Letter letter = game.Letters[lstabcbuttons.IndexOf(btn)];
-        game.GuessALetter(letter);
     }
 
     private void DetectGameWonOrLost()

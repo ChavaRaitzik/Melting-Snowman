@@ -17,6 +17,8 @@ namespace MeltingSnowmanSystem
 
         string _dash = "";
 
+        List<String> _pictures;
+
         Word _worddisplay = new Word();
 
         int _score = 0;
@@ -60,6 +62,7 @@ namespace MeltingSnowmanSystem
             this.Letters.ForEach(l => l.BackColor = LetterStandardColor);
 
             MysteryWords = wordgenerator.GetWords(WordGenerator.PartOfSpeech.noun, 1000);
+            Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
         }
         public GameStatusEnum GameStatus
         {
@@ -70,11 +73,18 @@ namespace MeltingSnowmanSystem
             }
         }
         public List<String> MysteryWords { get; private set; } = new();
-        public List<Letter> Letters { get; private set; } = new();
+        public List<Letter> Letters {  get; private set; } = new(); 
         public List<String> GameWonMessages { get; private set; } = new() { "You Won!", "Great Job!", "Congratulations!" };
         public List<String> GameLostMessages { get; private set; } = new() { "Better Luck Next Time", "Too Many Incorrect Guesses", "Try Again" };
         public List<String> GiveUpMessages { get; private set; } = new() { "Never give up", "Next time, just try your best", "Was that really so hard?" };
-        public List<String> Pictures { get; private set; } = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
+        public List<String> Pictures
+        {   get => _pictures;
+            private set 
+            { 
+                _pictures = value;
+                this.InvokePropertyChanged();
+            } 
+        } 
 
     public Word Word
         {
@@ -130,7 +140,7 @@ namespace MeltingSnowmanSystem
         public System.Drawing.Color DisplayWinningColor { get; private set; } = System.Drawing.Color.LimeGreen;
         public System.Drawing.Color DisplayLosingColor { get; private set; } = System.Drawing.Color.Red;
         public System.Drawing.Color DisplayGiveUpColor { get; private set; } = System.Drawing.Color.Orange;
-        public System.Drawing.Color LetterStandardColor { get; private set; } = System.Drawing.Color.DarkBlue;
+        public System.Drawing.Color LetterStandardColor { get; private set; } = System.Drawing.Color.DarkSlateBlue;
         public System.Drawing.Color LetterCorrectColor { get; private set; } = System.Drawing.Color.LimeGreen;
         public System.Drawing.Color LetterIncorrectColor { get; private set; } = System.Drawing.Color.Red;
 

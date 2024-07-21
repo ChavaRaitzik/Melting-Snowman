@@ -8,8 +8,8 @@
         <Grid x:Name="gToolbar" Margin="15,0,15,0" ColumnDefinitions="*,*,2*,*,.5*" RowDefinitions="Auto" Grid.Row="1" Grid.Column="0">
             <Button x:Name="btnStart" Text="START" Clicked="btnStart_Clicked" Grid.Row="0" Grid.Column="0"/>
             <Button x:Name="btnGiveUp" Text="GIVE UP" Clicked="btnGiveUp_Clicked" Grid.Row="0" Grid.Column="1"/>
-            <Frame MaximumHeightRequest="40" Grid.Row="0" Grid.Column="2">
-                <Label x:Name="lblMessageBox" HorizontalTextAlignment="Center" BindingContext="{Binding Message}" Text="{Binding MessageText}" TextColor="{Binding ColorMAUI}"/>
+            <Frame Padding="0" Grid.Row="0" Grid.Column="2">
+                <Label x:Name="lblMessageBox" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="20" BindingContext="{Binding Message}" Text="{Binding MessageText}" TextColor="{Binding ColorMAUI}"/>
             </Frame>
             <Entry x:Name="txtScore" Text="SCORE" IsReadOnly="True" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="3"/>
             <Entry x:Name="txtScoreBox" Text="{Binding Score}" IsReadOnly="True" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="4"/>

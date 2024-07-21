@@ -98,7 +98,7 @@
             tblMain.Controls.Add(tblMiddle, 1, 4);
             tblMain.Controls.Add(lblMysteryWord, 1, 6);
             tblMain.Dock = DockStyle.Fill;
-            tblMain.Font = new Font("Constantia", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            tblMain.Font = new Font("Constantia", 16.2F, FontStyle.Bold);
             tblMain.ForeColor = Color.FromArgb(64, 0, 64);
             tblMain.Location = new Point(0, 0);
             tblMain.Name = "tblMain";
@@ -118,8 +118,8 @@
             // 
             lblMeltingSnowman.AutoSize = true;
             lblMeltingSnowman.Dock = DockStyle.Fill;
-            lblMeltingSnowman.Font = new Font("Algerian", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMeltingSnowman.ForeColor = Color.DarkBlue;
+            lblMeltingSnowman.Font = new Font("Algerian", 36F, FontStyle.Bold);
+            lblMeltingSnowman.ForeColor = Color.DarkSlateBlue;
             lblMeltingSnowman.Location = new Point(25, 19);
             lblMeltingSnowman.Name = "lblMeltingSnowman";
             lblMeltingSnowman.Size = new Size(862, 87);
@@ -155,7 +155,7 @@
             // 
             btnStart.BackColor = Color.Black;
             btnStart.Dock = DockStyle.Fill;
-            btnStart.Font = new Font("Constantia", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStart.Font = new Font("Constantia", 13.8F, FontStyle.Bold);
             btnStart.ForeColor = Color.White;
             btnStart.Location = new Point(3, 3);
             btnStart.Name = "btnStart";
@@ -168,7 +168,7 @@
             // 
             txtScoreBox.BackColor = Color.Black;
             txtScoreBox.Dock = DockStyle.Fill;
-            txtScoreBox.Font = new Font("Constantia", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtScoreBox.Font = new Font("Constantia", 13.8F, FontStyle.Bold);
             txtScoreBox.ForeColor = Color.White;
             txtScoreBox.Location = new Point(807, 3);
             txtScoreBox.Margin = new Padding(0, 3, 3, 3);
@@ -183,7 +183,7 @@
             lblMessageBox.AutoSize = true;
             lblMessageBox.BorderStyle = BorderStyle.FixedSingle;
             lblMessageBox.Dock = DockStyle.Fill;
-            lblMessageBox.Font = new Font("Constantia", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMessageBox.Font = new Font("Constantia", 13.8F);
             lblMessageBox.ForeColor = Color.FromArgb(64, 0, 64);
             lblMessageBox.Location = new Point(219, 0);
             lblMessageBox.Name = "lblMessageBox";
@@ -195,7 +195,7 @@
             // 
             txtScore.BackColor = Color.Black;
             txtScore.Dock = DockStyle.Fill;
-            txtScore.Font = new Font("Constantia", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtScore.Font = new Font("Constantia", 13.8F, FontStyle.Bold);
             txtScore.ForeColor = Color.White;
             txtScore.Location = new Point(697, 3);
             txtScore.Margin = new Padding(3, 3, 0, 3);
@@ -210,7 +210,7 @@
             // 
             btnGiveUp.BackColor = Color.Black;
             btnGiveUp.Dock = DockStyle.Fill;
-            btnGiveUp.Font = new Font("Constantia", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGiveUp.Font = new Font("Constantia", 10.2F, FontStyle.Bold);
             btnGiveUp.ForeColor = Color.White;
             btnGiveUp.Location = new Point(105, 3);
             btnGiveUp.Name = "btnGiveUp";
@@ -294,9 +294,9 @@
             // 
             // btnA
             // 
-            btnA.BackColor = Color.DarkBlue;
+            btnA.BackColor = Color.DarkSlateBlue;
             btnA.Dock = DockStyle.Fill;
-            btnA.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnA.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnA.ForeColor = Color.White;
             btnA.Location = new Point(3, 3);
             btnA.Name = "btnA";
@@ -307,9 +307,9 @@
             // 
             // btnB
             // 
-            btnB.BackColor = Color.DarkBlue;
+            btnB.BackColor = Color.DarkSlateBlue;
             btnB.Dock = DockStyle.Fill;
-            btnB.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnB.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnB.ForeColor = Color.White;
             btnB.Location = new Point(102, 3);
             btnB.Name = "btnB";
@@ -320,9 +320,9 @@
             // 
             // btnC
             // 
-            btnC.BackColor = Color.DarkBlue;
+            btnC.BackColor = Color.DarkSlateBlue;
             btnC.Dock = DockStyle.Fill;
-            btnC.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnC.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnC.ForeColor = Color.White;
             btnC.Location = new Point(201, 3);
             btnC.Name = "btnC";
@@ -333,9 +333,9 @@
             // 
             // btnD
             // 
-            btnD.BackColor = Color.DarkBlue;
+            btnD.BackColor = Color.DarkSlateBlue;
             btnD.Dock = DockStyle.Fill;
-            btnD.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnD.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnD.ForeColor = Color.White;
             btnD.Location = new Point(300, 3);
             btnD.Name = "btnD";
@@ -346,9 +346,9 @@
             // 
             // btnE
             // 
-            btnE.BackColor = Color.DarkBlue;
+            btnE.BackColor = Color.DarkSlateBlue;
             btnE.Dock = DockStyle.Fill;
-            btnE.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnE.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnE.ForeColor = Color.White;
             btnE.Location = new Point(3, 65);
             btnE.Name = "btnE";
@@ -359,9 +359,9 @@
             // 
             // btnF
             // 
-            btnF.BackColor = Color.DarkBlue;
+            btnF.BackColor = Color.DarkSlateBlue;
             btnF.Dock = DockStyle.Fill;
-            btnF.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnF.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnF.ForeColor = Color.White;
             btnF.Location = new Point(102, 65);
             btnF.Name = "btnF";
@@ -372,9 +372,9 @@
             // 
             // btnG
             // 
-            btnG.BackColor = Color.DarkBlue;
+            btnG.BackColor = Color.DarkSlateBlue;
             btnG.Dock = DockStyle.Fill;
-            btnG.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnG.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnG.ForeColor = Color.White;
             btnG.Location = new Point(201, 65);
             btnG.Name = "btnG";
@@ -385,9 +385,9 @@
             // 
             // btnH
             // 
-            btnH.BackColor = Color.DarkBlue;
+            btnH.BackColor = Color.DarkSlateBlue;
             btnH.Dock = DockStyle.Fill;
-            btnH.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnH.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnH.ForeColor = Color.White;
             btnH.Location = new Point(300, 65);
             btnH.Name = "btnH";
@@ -398,9 +398,9 @@
             // 
             // btnI
             // 
-            btnI.BackColor = Color.DarkBlue;
+            btnI.BackColor = Color.DarkSlateBlue;
             btnI.Dock = DockStyle.Fill;
-            btnI.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnI.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnI.ForeColor = Color.White;
             btnI.Location = new Point(3, 127);
             btnI.Name = "btnI";
@@ -411,9 +411,9 @@
             // 
             // btnJ
             // 
-            btnJ.BackColor = Color.DarkBlue;
+            btnJ.BackColor = Color.DarkSlateBlue;
             btnJ.Dock = DockStyle.Fill;
-            btnJ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnJ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnJ.ForeColor = Color.White;
             btnJ.Location = new Point(102, 127);
             btnJ.Name = "btnJ";
@@ -424,9 +424,9 @@
             // 
             // btnK
             // 
-            btnK.BackColor = Color.DarkBlue;
+            btnK.BackColor = Color.DarkSlateBlue;
             btnK.Dock = DockStyle.Fill;
-            btnK.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnK.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnK.ForeColor = Color.White;
             btnK.Location = new Point(201, 127);
             btnK.Name = "btnK";
@@ -437,9 +437,9 @@
             // 
             // btnL
             // 
-            btnL.BackColor = Color.DarkBlue;
+            btnL.BackColor = Color.DarkSlateBlue;
             btnL.Dock = DockStyle.Fill;
-            btnL.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnL.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnL.ForeColor = Color.White;
             btnL.Location = new Point(300, 127);
             btnL.Name = "btnL";
@@ -450,9 +450,9 @@
             // 
             // btnM
             // 
-            btnM.BackColor = Color.DarkBlue;
+            btnM.BackColor = Color.DarkSlateBlue;
             btnM.Dock = DockStyle.Fill;
-            btnM.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnM.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnM.ForeColor = Color.White;
             btnM.Location = new Point(3, 189);
             btnM.Name = "btnM";
@@ -463,9 +463,9 @@
             // 
             // btnN
             // 
-            btnN.BackColor = Color.DarkBlue;
+            btnN.BackColor = Color.DarkSlateBlue;
             btnN.Dock = DockStyle.Fill;
-            btnN.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnN.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnN.ForeColor = Color.White;
             btnN.Location = new Point(102, 189);
             btnN.Name = "btnN";
@@ -476,9 +476,9 @@
             // 
             // btnO
             // 
-            btnO.BackColor = Color.DarkBlue;
+            btnO.BackColor = Color.DarkSlateBlue;
             btnO.Dock = DockStyle.Fill;
-            btnO.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnO.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnO.ForeColor = Color.White;
             btnO.Location = new Point(201, 189);
             btnO.Name = "btnO";
@@ -489,9 +489,9 @@
             // 
             // btnP
             // 
-            btnP.BackColor = Color.DarkBlue;
+            btnP.BackColor = Color.DarkSlateBlue;
             btnP.Dock = DockStyle.Fill;
-            btnP.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnP.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnP.ForeColor = Color.White;
             btnP.Location = new Point(300, 189);
             btnP.Name = "btnP";
@@ -502,9 +502,9 @@
             // 
             // btnQ
             // 
-            btnQ.BackColor = Color.DarkBlue;
+            btnQ.BackColor = Color.DarkSlateBlue;
             btnQ.Dock = DockStyle.Fill;
-            btnQ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnQ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnQ.ForeColor = Color.White;
             btnQ.Location = new Point(3, 251);
             btnQ.Name = "btnQ";
@@ -515,9 +515,9 @@
             // 
             // btnR
             // 
-            btnR.BackColor = Color.DarkBlue;
+            btnR.BackColor = Color.DarkSlateBlue;
             btnR.Dock = DockStyle.Fill;
-            btnR.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnR.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnR.ForeColor = Color.White;
             btnR.Location = new Point(102, 251);
             btnR.Name = "btnR";
@@ -528,9 +528,9 @@
             // 
             // btnS
             // 
-            btnS.BackColor = Color.DarkBlue;
+            btnS.BackColor = Color.DarkSlateBlue;
             btnS.Dock = DockStyle.Fill;
-            btnS.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnS.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnS.ForeColor = Color.White;
             btnS.Location = new Point(201, 251);
             btnS.Name = "btnS";
@@ -541,9 +541,9 @@
             // 
             // btnT
             // 
-            btnT.BackColor = Color.DarkBlue;
+            btnT.BackColor = Color.DarkSlateBlue;
             btnT.Dock = DockStyle.Fill;
-            btnT.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnT.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnT.ForeColor = Color.White;
             btnT.Location = new Point(300, 251);
             btnT.Name = "btnT";
@@ -554,9 +554,9 @@
             // 
             // btnU
             // 
-            btnU.BackColor = Color.DarkBlue;
+            btnU.BackColor = Color.DarkSlateBlue;
             btnU.Dock = DockStyle.Fill;
-            btnU.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnU.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnU.ForeColor = Color.White;
             btnU.Location = new Point(3, 313);
             btnU.Name = "btnU";
@@ -567,9 +567,9 @@
             // 
             // btnV
             // 
-            btnV.BackColor = Color.DarkBlue;
+            btnV.BackColor = Color.DarkSlateBlue;
             btnV.Dock = DockStyle.Fill;
-            btnV.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnV.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnV.ForeColor = Color.White;
             btnV.Location = new Point(102, 313);
             btnV.Name = "btnV";
@@ -580,9 +580,9 @@
             // 
             // btnW
             // 
-            btnW.BackColor = Color.DarkBlue;
+            btnW.BackColor = Color.DarkSlateBlue;
             btnW.Dock = DockStyle.Fill;
-            btnW.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnW.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnW.ForeColor = Color.White;
             btnW.Location = new Point(201, 313);
             btnW.Name = "btnW";
@@ -593,9 +593,9 @@
             // 
             // btnX
             // 
-            btnX.BackColor = Color.DarkBlue;
+            btnX.BackColor = Color.DarkSlateBlue;
             btnX.Dock = DockStyle.Fill;
-            btnX.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnX.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnX.ForeColor = Color.White;
             btnX.Location = new Point(300, 313);
             btnX.Name = "btnX";
@@ -606,9 +606,9 @@
             // 
             // btnY
             // 
-            btnY.BackColor = Color.DarkBlue;
+            btnY.BackColor = Color.DarkSlateBlue;
             btnY.Dock = DockStyle.Fill;
-            btnY.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnY.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnY.ForeColor = Color.White;
             btnY.Location = new Point(102, 375);
             btnY.Name = "btnY";
@@ -619,9 +619,9 @@
             // 
             // btnZ
             // 
-            btnZ.BackColor = Color.DarkBlue;
+            btnZ.BackColor = Color.DarkSlateBlue;
             btnZ.Dock = DockStyle.Fill;
-            btnZ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnZ.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold);
             btnZ.ForeColor = Color.White;
             btnZ.Location = new Point(201, 375);
             btnZ.Name = "btnZ";
@@ -728,7 +728,7 @@
             lblMysteryWord.AutoSize = true;
             lblMysteryWord.BorderStyle = BorderStyle.FixedSingle;
             lblMysteryWord.Dock = DockStyle.Fill;
-            lblMysteryWord.Font = new Font("Constantia", 31.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMysteryWord.Font = new Font("Constantia", 31.8000011F, FontStyle.Bold);
             lblMysteryWord.ForeColor = Color.FromArgb(64, 0, 64);
             lblMysteryWord.Location = new Point(25, 653);
             lblMysteryWord.Name = "lblMysteryWord";
