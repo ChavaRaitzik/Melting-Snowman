@@ -6,15 +6,16 @@ namespace MeltingSnowmanApp
     public partial class frmMeltingSnowmanApp : Form
     {
         Game game = new();
-        string path = Application.StartupPath + @"\images\";
+        string path = "C:\\Users\\chava\\repos\\Melting-Snowman\\MeltingSnowmanApp\\MeltingSnowmanApp\\Images\\";
+        //string path = Application.StartupPath + @"\images\";
         List<Button> lstabcbuttons;
         //List<PictureBox> lstpictureboxes;
 
         public frmMeltingSnowmanApp()
         {
             InitializeComponent();
-            //picbox1.DataBindings.Add("ImageLocation", game, "PictureWithFullLocation");
-            picbox1.ImageLocation = path + game.Pictures[0];
+            //picbox1.DataBindings.Add("ImageLocation", game, "Picture1");
+            picbox1.ImageLocation = game.PicturesWithFullLocation[0];
             picbox2.ImageLocation = path + game.Pictures[1];
             picbox3.ImageLocation = path + game.Pictures[2];
             picbox4.ImageLocation = path + game.Pictures[3];

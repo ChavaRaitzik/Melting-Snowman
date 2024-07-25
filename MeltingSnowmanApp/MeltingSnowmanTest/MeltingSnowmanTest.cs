@@ -26,7 +26,7 @@ namespace MeltingSnowmanTest
         {
             Game game = new();
             game.NewGame();
-            bool b = game.Pictures.TrueForAll(p => p.Contains("blank") == false);
+            bool b = game.Pictures.ToList().TrueForAll(p => p.Contains("blank") == false);
             string msg = $"Game Status = {game.GameStatus} Letters Back Color = {game.Letters[0].BackColor} Snowman Is Complete = {b} MysteryWordDisplay = {game.WordDisplay.WordValue}";
             Assert.IsTrue(game.GameStatus == GameStatusEnum.Playing && game.Letters.TrueForAll(l => l.BackColor == game.LetterStandardColor) && b == true && game.WordDisplay.WordValue.Count() > 0, msg);
             TestContext.WriteLine(msg);
@@ -80,7 +80,7 @@ namespace MeltingSnowmanTest
             game.GuessALetter(incorrectletter);
             game.GuessALetter(incorrectletter);
             game.GuessALetter(incorrectletter);
-            bool b = game.Pictures.TrueForAll(pb => pb.Contains("blank"));
+            bool b = game.Pictures.ToList().TrueForAll(pb => pb.Contains("blank"));
             int oldscore = game.Score;
             game.DetectGameWonOrLost();
             int newscore = game.Score;

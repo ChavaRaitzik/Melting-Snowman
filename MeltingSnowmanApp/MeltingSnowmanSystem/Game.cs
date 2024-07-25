@@ -1,4 +1,5 @@
 ﻿using CrypticWizard.RandomWordGenerator;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -17,7 +18,10 @@ namespace MeltingSnowmanSystem
 
         string _dash = "";
 
-        List<String> _pictures;
+        //List<String> _pictures;
+        ObservableCollection<string> _pictures;
+
+        ObservableCollection<String> _pictureswithfulllocation;
 
         Word _worddisplay = new Word();
 
@@ -26,6 +30,8 @@ namespace MeltingSnowmanSystem
         Message _message = new Message();
 
         Word _word = new Word();
+
+        string path = "C:\\Users\\chava\\repos\\Melting-Snowman\\MeltingSnowmanApp\\MeltingSnowmanApp\\Images\\";
 
         public Game()
         {
@@ -63,6 +69,7 @@ namespace MeltingSnowmanSystem
 
             MysteryWords = wordgenerator.GetWords(WordGenerator.PartOfSpeech.noun, 1000);
             Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
+            PicturesWithFullLocation = new() { path + "snowman1picture.png", path + "snowman2picture.png", path + "snowman3picture.png", path + "snowman4picture.png", path + "snowman5picture.png", path + "snowman6picture.png" };
         }
         public GameStatusEnum GameStatus
         {
@@ -77,16 +84,32 @@ namespace MeltingSnowmanSystem
         public List<String> GameWonMessages { get; private set; } = new() { "You Won!", "Great Job!", "Congratulations!" };
         public List<String> GameLostMessages { get; private set; } = new() { "Better Luck Next Time", "Too Many Incorrect Guesses", "Try Again" };
         public List<String> GiveUpMessages { get; private set; } = new() { "Never give up", "Next time, just try your best", "Was that really so hard?" };
-        public List<String> Pictures
+        public ObservableCollection<String> Pictures
         {   get => _pictures;
             private set 
             { 
                 _pictures = value;
                 this.InvokePropertyChanged();
             } 
-        } 
+        }
 
-    public Word Word
+        public ObservableCollection<String> PicturesWithFullLocation
+        {
+            get => _pictureswithfulllocation;
+            private set
+            {
+                _pictureswithfulllocation = value;
+                this.InvokePropertyChanged();
+                this.InvokePropertyChanged(Picture1);
+            }
+        }
+
+        public string Picture1
+        {
+            get => PicturesWithFullLocation[0];
+        }
+
+        public Word Word
         {
             get => _word;
             private set
@@ -157,7 +180,8 @@ namespace MeltingSnowmanSystem
             this.GameStatus = GameStatusEnum.Playing;
             this.Letters.ForEach(l => l.BackColor = LetterStandardColor);
             this.Message.MessageText = "";
-            this.Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png", };
+            this.Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
+            this.PicturesWithFullLocation = new() { path + "snowman1picture.png", path + "snowman2picture.png", path + "snowman3picture.png", path + "snowman4picture.png", path + "snowman5picture.png", path + "snowman6picture.png" };
             GetMysteryWord();
         }
 
@@ -180,19 +204,25 @@ namespace MeltingSnowmanSystem
                 letter.BackColor = LetterIncorrectColor;
                 int numblankpics = Pictures.Where(p => p.Contains("blank") == true).Count();
                 this.Pictures[numblankpics] = "snowmanblankpicture";
+                int numblankpics2 = PicturesWithFullLocation.Where(p => p.Contains("blank") == true).Count();
+                this.PicturesWithFullLocation[numblankpics2] = "snowmanblankpicture";
             }
         }
 
         public void DetectGameWonOrLost()
         {
-            if (this.WordDisplay.WordValue == this.Word.WordValue) 
+            if (this.WordDisplay.WordValue == this.Word.WordValue)
             {
                 this.GameStatus = GameStatusEnum.GameWon;
             }
-            else if (Pictures.TrueForAll(pb => pb.Contains("blank")))
+            else if (Pictures.Count(pb => pb.Contains("blank")) == 6 || PicturesWithFullLocation.Count(pb => pb.Contains("blank")) == 6)
             {
                 this.GameStatus = GameStatusEnum.GameLost;
             }
+            //else if (Pictures.TrueForAll(pb => pb.Contains("blank")))
+            //{
+            //    this.GameStatus = GameStatusEnum.GameLost;
+            //}
             DisplayScore();
         }
 
