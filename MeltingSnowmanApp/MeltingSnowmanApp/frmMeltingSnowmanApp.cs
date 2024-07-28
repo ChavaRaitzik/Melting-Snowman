@@ -6,21 +6,20 @@ namespace MeltingSnowmanApp
     public partial class frmMeltingSnowmanApp : Form
     {
         Game game = new();
-        string path = "C:\\Users\\chava\\repos\\Melting-Snowman\\MeltingSnowmanApp\\MeltingSnowmanApp\\Images\\";
-        //string path = Application.StartupPath + @"\images\";
         List<Button> lstabcbuttons;
         //List<PictureBox> lstpictureboxes;
 
         public frmMeltingSnowmanApp()
         {
             InitializeComponent();
+            picbox1.DataBindings.Add("ImageLocation", game, "PicturesWithFullLocation[0]");
             //picbox1.DataBindings.Add("ImageLocation", game, "Picture1");
-            picbox1.ImageLocation = game.PicturesWithFullLocation[0];
-            picbox2.ImageLocation = path + game.Pictures[1];
-            picbox3.ImageLocation = path + game.Pictures[2];
-            picbox4.ImageLocation = path + game.Pictures[3];
-            picbox5.ImageLocation = path + game.Pictures[4];
-            picbox6.ImageLocation = path + game.Pictures[5];
+            //picbox1.ImageLocation = game.PicturesWithFullLocation[0];
+            picbox2.ImageLocation = game.PicturesWithFullLocation[1];
+            picbox3.ImageLocation = game.PicturesWithFullLocation[2];
+            picbox4.ImageLocation = game.PicturesWithFullLocation[3];
+            picbox5.ImageLocation = game.PicturesWithFullLocation[4];
+            picbox6.ImageLocation = game.PicturesWithFullLocation[5];
             lstabcbuttons = new() { btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ };
             //lstpictureboxes = new() { picbox1, picbox2, picbox3, picbox4, picbox5, picbox6 };
             MeltingSnowmanSystem.Message message = game.Message;

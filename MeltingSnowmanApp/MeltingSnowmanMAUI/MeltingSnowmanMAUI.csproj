@@ -69,6 +69,7 @@
 	  <None Remove="Resources\Images\Snowman4Picture.png" />
 	  <None Remove="Resources\Images\Snowman5Picture.png" />
 	  <None Remove="Resources\Images\Snowman6Picture.png" />
+	  <None Remove="Resources\Images\snowmanblankpicture.png" />
 	  <None Remove="Resources\Images\SnowmanIcon.ico" />
 	</ItemGroup>
 

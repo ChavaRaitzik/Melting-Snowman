@@ -8,6 +8,7 @@ namespace MeltingSnowmanSystem
     public class Game : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
+        public event EventHandler? ScoreChanged;
         public enum GameStatusEnum { NotStarted, Playing, GameWon, GameLost, GiveUp }
 
         WordGenerator wordgenerator = new();
@@ -18,14 +19,13 @@ namespace MeltingSnowmanSystem
 
         string _dash = "";
 
-        //List<String> _pictures;
         ObservableCollection<string> _pictures;
 
         ObservableCollection<String> _pictureswithfulllocation;
 
         Word _worddisplay = new Word();
 
-        int _score = 0;
+        private static int _score = 0;
 
         Message _message = new Message();
 
@@ -33,8 +33,12 @@ namespace MeltingSnowmanSystem
 
         string path = "C:\\Users\\chava\\repos\\Melting-Snowman\\MeltingSnowmanApp\\MeltingSnowmanApp\\Images\\";
 
+        private static int numgames;
+
         public Game()
         {
+            numgames++;
+            this.GameName = "GAME " + numgames;
             for (int i = 0; i < 26; i++)
             {
                 this.Letters.Add(new Letter());
@@ -71,6 +75,8 @@ namespace MeltingSnowmanSystem
             Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
             PicturesWithFullLocation = new() { path + "snowman1picture.png", path + "snowman2picture.png", path + "snowman3picture.png", path + "snowman4picture.png", path + "snowman5picture.png", path + "snowman6picture.png" };
         }
+
+        public string GameName { get; private set; }
         public GameStatusEnum GameStatus
         {
             get => _gamestatus; private set
@@ -139,13 +145,12 @@ namespace MeltingSnowmanSystem
             }
         }
 
-        public int Score
+        public static int Score
         {
             get => _score;
             private set
             {
                 _score = value;
-                this.InvokePropertyChanged();
             }
         }
 
@@ -157,6 +162,11 @@ namespace MeltingSnowmanSystem
                 _message = value;
                 this.InvokePropertyChanged();
             }
+        }
+
+        public string StartButtonText
+        {
+            get => "START " + this.GameName;
         }
 
         public System.Drawing.Color DisplayStandardColor { get; private set; } = System.Drawing.Color.Black;
@@ -201,11 +211,15 @@ namespace MeltingSnowmanSystem
             }
             else
             {
-                letter.BackColor = LetterIncorrectColor;
+                var newPictures = new ObservableCollection<string>(Pictures);
                 int numblankpics = Pictures.Where(p => p.Contains("blank") == true).Count();
-                this.Pictures[numblankpics] = "snowmanblankpicture";
+                newPictures[numblankpics] = "snowmanblankpicture.png";
+                Pictures = newPictures;
+                var newPicturesWithFullLocation = new ObservableCollection<string>(Pictures);
                 int numblankpics2 = PicturesWithFullLocation.Where(p => p.Contains("blank") == true).Count();
-                this.PicturesWithFullLocation[numblankpics2] = "snowmanblankpicture";
+                newPicturesWithFullLocation[numblankpics2] = "snowmanblankpicture.png";
+                PicturesWithFullLocation = newPicturesWithFullLocation;
+                letter.BackColor = LetterIncorrectColor;
             }
         }
 
@@ -219,10 +233,6 @@ namespace MeltingSnowmanSystem
             {
                 this.GameStatus = GameStatusEnum.GameLost;
             }
-            //else if (Pictures.TrueForAll(pb => pb.Contains("blank")))
-            //{
-            //    this.GameStatus = GameStatusEnum.GameLost;
-            //}
             DisplayScore();
         }
 
@@ -237,26 +247,27 @@ namespace MeltingSnowmanSystem
             switch (GameStatus)
             {
                 case GameStatusEnum.GameWon:
-                    this.Score += 1;
+                    _score += 1;
                     this.Message.MessageText = GameWonMessages[rnd.Next(0, GameWonMessages.Count)];
                     this.Message.Color = DisplayWinningColor;
                     this.WordDisplay.Color = DisplayWinningColor;
                     break;
                 case GameStatusEnum.GameLost:
-                    this.Score -= 1;
+                    _score -= 1;
                     this.Message.MessageText = GameLostMessages[rnd.Next(0, GameLostMessages.Count)];
                     this.Message.Color = DisplayLosingColor;
                     this.WordDisplay.WordValue = Word.WordValue;
                     this.WordDisplay.Color = DisplayLosingColor;
                     break;
                 case GameStatusEnum.GiveUp:
-                    this.Score -= 1;
+                    _score -= 1;
                     this.Message.MessageText = GiveUpMessages[rnd.Next(0, GiveUpMessages.Count)];
                     this.Message.Color = DisplayGiveUpColor;
                     this.WordDisplay.WordValue = Word.WordValue;
                     this.WordDisplay.Color = DisplayGiveUpColor;
                     break;
             }
+            ScoreChanged?.Invoke(this, new EventArgs());
         }
 
         private void InvokePropertyChanged([CallerMemberName] string propertyname = "")

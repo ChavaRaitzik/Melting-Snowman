@@ -5,14 +5,19 @@
              Title="MeltingSnowman">
     <Grid x:Name="gMain" ColumnDefinitions="*" RowDefinitions="Auto,Auto,Auto,Auto">
         <Label x:Name="lblMeltingSnowman" Text="Melting Snowman" HorizontalTextAlignment="Center" FontFamily="ALGERIAN" FontSize="36" FontAttributes="Bold" TextColor="DarkSlateBlue" Grid.Row="0" Grid.Column="0"/>
+        <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Margin="15,0,15,0" HorizontalOptions="End" VerticalOptions="Start">
+            <RadioButton x:Name="Game1Rb" Content="{Binding GameName}" CheckedChanged="Game_CheckedChanged" IsChecked="True"/>
+            <RadioButton x:Name="Game2Rb" Content="{Binding GameName}" CheckedChanged="Game_CheckedChanged"/>
+            <RadioButton x:Name="Game3Rb" Content="{Binding GameName}" CheckedChanged="Game_CheckedChanged"/>
+        </HorizontalStackLayout>
         <Grid x:Name="gToolbar" Margin="15,0,15,0" ColumnDefinitions="*,*,2*,*,.5*" RowDefinitions="Auto" Grid.Row="1" Grid.Column="0">
-            <Button x:Name="btnStart" Text="START" Clicked="btnStart_Clicked" Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="btnStart" Text="{Binding StartButtonText}" Clicked="btnStart_Clicked" Grid.Row="0" Grid.Column="0"/>
             <Button x:Name="btnGiveUp" Text="GIVE UP" Clicked="btnGiveUp_Clicked" Grid.Row="0" Grid.Column="1"/>
             <Frame Padding="0" Grid.Row="0" Grid.Column="2">
                 <Label x:Name="lblMessageBox" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="20" BindingContext="{Binding Message}" Text="{Binding MessageText}" TextColor="{Binding ColorMAUI}"/>
             </Frame>
             <Entry x:Name="txtScore" Text="SCORE" IsReadOnly="True" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="3"/>
-            <Entry x:Name="txtScoreBox" Text="{Binding Score}" IsReadOnly="True" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="4"/>
+            <Entry x:Name="txtScoreBox" IsReadOnly="True" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="4"/>
         </Grid>
         <Grid x:Name="gMiddle" Margin="10" ColumnDefinitions="*,*" RowDefinitions="*" Grid.Row="2" Grid.Column="0">
             <Grid x:Name="gABC" ColumnDefinitions="*,Auto,Auto,Auto,Auto,3*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" Grid.Row="0" Grid.Column="0">
