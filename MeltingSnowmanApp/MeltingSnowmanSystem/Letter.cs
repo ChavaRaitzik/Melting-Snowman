@@ -6,6 +6,7 @@ namespace MeltingSnowmanSystem
     public class Letter : INotifyPropertyChanged
     {
         string _lettervalue = "";
+        bool _isenabled = true;
         System.Drawing.Color _backcolor;
 
 
@@ -18,6 +19,15 @@ namespace MeltingSnowmanSystem
                 _lettervalue = value;
                 this.InvokePropertyChanged();
             } 
+        }
+
+        public bool IsEnabled
+        {
+            get => _isenabled; set
+            {
+                _isenabled = value;
+                this.InvokePropertyChanged();
+            }
         }
         public System.Drawing.Color BackColor
         {

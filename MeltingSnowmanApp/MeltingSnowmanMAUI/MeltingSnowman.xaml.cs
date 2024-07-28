@@ -8,7 +8,6 @@ public partial class MeltingSnowman : ContentPage
     Game activegame;
     List<Game> lstgame = new() { new Game() , new Game(), new Game()};
     List<Button> lstabcbuttons;
-    //Color standardcolor;
     public MeltingSnowman()
 	{
 		InitializeComponent();
@@ -19,7 +18,6 @@ public partial class MeltingSnowman : ContentPage
         activegame = lstgame[0];
         this.BindingContext = activegame;
         lstabcbuttons = new() { btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ };
-        //standardcolor = lstabcbuttons[0].BackgroundColor;
         btnGiveUp.IsEnabled = false;
     }
 
@@ -33,7 +31,6 @@ public partial class MeltingSnowman : ContentPage
         if (activegame.GameStatus != GameStatusEnum.Playing) 
         {
             activegame.NewGame();
-            lstabcbuttons.ForEach(b => b.IsEnabled = true);
         };
     }
 
@@ -41,7 +38,6 @@ public partial class MeltingSnowman : ContentPage
     {
         Letter letter = activegame.Letters[lstabcbuttons.IndexOf(btn)];
         activegame.GuessALetter(letter);
-        btn.IsEnabled = false;
         btnStart.IsEnabled = false;
         btnGiveUp.IsEnabled = true;
     }
@@ -100,11 +96,8 @@ public partial class MeltingSnowman : ContentPage
                 case GameStatusEnum.NotStarted:
                     btnGiveUp.IsEnabled = false;
                     btnStart.IsEnabled = true;
-                    lstabcbuttons.ForEach(b => b.IsEnabled = true);
                     break;
             }
-            //List<Button> buttonstoenable = lstabcbuttons.Where(b => b.BackgroundColor == standardcolor).ToList();
-            //buttonstoenable.ForEach(b => b.IsEnabled = true);
         }
     }
 }

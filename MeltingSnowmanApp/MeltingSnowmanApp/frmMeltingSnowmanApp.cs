@@ -12,9 +12,9 @@ namespace MeltingSnowmanApp
         public frmMeltingSnowmanApp()
         {
             InitializeComponent();
-            picbox1.DataBindings.Add("ImageLocation", game, "PicturesWithFullLocation[0]");
+            //picbox1.DataBindings.Add("ImageLocation", game, "PicturesWithFullLocation[0]");
             //picbox1.DataBindings.Add("ImageLocation", game, "Picture1");
-            //picbox1.ImageLocation = game.PicturesWithFullLocation[0];
+            picbox1.ImageLocation = game.PicturesWithFullLocation[0];
             picbox2.ImageLocation = game.PicturesWithFullLocation[1];
             picbox3.ImageLocation = game.PicturesWithFullLocation[2];
             picbox4.ImageLocation = game.PicturesWithFullLocation[3];
@@ -28,7 +28,6 @@ namespace MeltingSnowmanApp
             Word word = game.WordDisplay;
             lblMysteryWord.DataBindings.Add("Text", word, "WordValue");
             lblMysteryWord.DataBindings.Add("ForeColor", word, "Color");
-            txtScoreBox.DataBindings.Add("Text", game, "Score".ToString());
             btnStart.Click += BtnStart_Click;
             btnGiveUp.Enabled = false;
             btnGiveUp.Click += BtnGiveUp_Click;
@@ -37,13 +36,14 @@ namespace MeltingSnowmanApp
                 b.Click += ABCButton_Click;
                 b.DataBindings.Add("Text", letter, "LetterValue");
                 b.DataBindings.Add("BackColor", letter, "BackColor");
+                b.DataBindings.Add("Enabled", letter, "IsEnabled");
             });
+            game.ScoreChanged += Game_ScoreChanged;
         }
 
         private void NewGame()
         {
             game.NewGame();
-            lstabcbuttons.ForEach(b => b.Enabled = true);
             //picbox1.ImageLocation = path + "SnowmanPicture1.png";
             //picbox2.ImageLocation = path + "SnowmanPicture2.png";
             //picbox3.ImageLocation = path + "SnowmanPicture3.png";
@@ -54,7 +54,6 @@ namespace MeltingSnowmanApp
 
         private void GuessALetter(Button btn)
         {
-            btn.Enabled = false;
             btnStart.Enabled = false;
             btnGiveUp.Enabled = true;
             Letter letter = game.Letters[lstabcbuttons.IndexOf(btn)];
@@ -119,5 +118,9 @@ namespace MeltingSnowmanApp
             GiveUp();
         }
 
+        private void Game_ScoreChanged(object? sender, EventArgs e)
+        {
+            txtScoreBox.Text = Game.Score.ToString();
+        }
     }
 }

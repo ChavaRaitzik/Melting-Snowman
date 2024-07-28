@@ -188,7 +188,11 @@ namespace MeltingSnowmanSystem
         public void NewGame()
         {
             this.GameStatus = GameStatusEnum.Playing;
-            this.Letters.ForEach(l => l.BackColor = LetterStandardColor);
+            this.Letters.ForEach(l => 
+            {
+                l.BackColor = LetterStandardColor;
+                l.IsEnabled = true;
+            });
             this.Message.MessageText = "";
             this.Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
             this.PicturesWithFullLocation = new() { path + "snowman1picture.png", path + "snowman2picture.png", path + "snowman3picture.png", path + "snowman4picture.png", path + "snowman5picture.png", path + "snowman6picture.png" };
@@ -221,6 +225,7 @@ namespace MeltingSnowmanSystem
                 PicturesWithFullLocation = newPicturesWithFullLocation;
                 letter.BackColor = LetterIncorrectColor;
             }
+            letter.IsEnabled = false;
         }
 
         public void DetectGameWonOrLost()
