@@ -91,9 +91,11 @@ public partial class MeltingSnowman : ContentPage
             this.BindingContext = activegame;
             switch (activegame.GameStatus)
             {
-                case GameStatusEnum.GameWon:
-                case GameStatusEnum.GiveUp:
-                case GameStatusEnum.NotStarted:
+                case GameStatusEnum.Playing:
+                    btnGiveUp.IsEnabled = true;
+                    btnStart.IsEnabled = false;
+                    break;
+                default:
                     btnGiveUp.IsEnabled = false;
                     btnStart.IsEnabled = true;
                     break;
