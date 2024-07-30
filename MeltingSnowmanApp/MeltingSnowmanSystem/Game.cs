@@ -219,9 +219,9 @@ namespace MeltingSnowmanSystem
                 int numblankpics = Pictures.Where(p => p.Contains("blank") == true).Count();
                 newPictures[numblankpics] = "snowmanblankpicture.png";
                 Pictures = newPictures;
-                var newPicturesWithFullLocation = new ObservableCollection<string>(Pictures);
+                var newPicturesWithFullLocation = new ObservableCollection<string>(PicturesWithFullLocation);
                 int numblankpics2 = PicturesWithFullLocation.Where(p => p.Contains("blank") == true).Count();
-                newPicturesWithFullLocation[numblankpics2] = "snowmanblankpicture.png";
+                newPicturesWithFullLocation[numblankpics2] = path + "snowmanblankpicture.png";
                 PicturesWithFullLocation = newPicturesWithFullLocation;
                 letter.BackColor = LetterIncorrectColor;
             }
