@@ -96,7 +96,7 @@ namespace MeltingSnowmanSystem
             } 
         }
 
-        public List<Picture> PicturesWithFullLocation { get; private set; } = new();
+        public ObservableCollection<Picture> PicturesWithFullLocation { get; private set; } = new();
 
         public Word Word
         {
@@ -203,7 +203,7 @@ namespace MeltingSnowmanSystem
                 int numblankpics = Pictures.Where(p => p.Contains("blank") == true).Count();
                 newPictures[numblankpics] = "snowmanblankpicture.png";
                 Pictures = newPictures;
-                var newPicturesWithFullLocation = new List<Picture>(PicturesWithFullLocation);
+                var newPicturesWithFullLocation = new ObservableCollection<Picture>(PicturesWithFullLocation);
                 int numblankpics2 = PicturesWithFullLocation.Where(p => p.PictureValue.Contains("blank") == true).Count();
                 newPicturesWithFullLocation[numblankpics2].PictureValue = path + "snowmanblankpicture.png";
                 PicturesWithFullLocation = newPicturesWithFullLocation;
