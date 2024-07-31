@@ -802,10 +802,10 @@
         private PictureBox picbox4;
         private PictureBox picbox5;
         private PictureBox picbox6;
-        private PictureBox picbox1;
         private Label lblMessageBox;
         private Label lblMysteryWord;
         private TextBox txtScore;
         private Button btnGiveUp;
+        private PictureBox picbox1;
     }
 }

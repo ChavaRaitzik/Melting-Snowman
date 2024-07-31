@@ -21,8 +21,6 @@ namespace MeltingSnowmanSystem
 
         ObservableCollection<string> _pictures;
 
-        ObservableCollection<String> _pictureswithfulllocation;
-
         Word _worddisplay = new Word();
 
         private static int _score = 0;
@@ -73,9 +71,8 @@ namespace MeltingSnowmanSystem
 
             MysteryWords = wordgenerator.GetWords(WordGenerator.PartOfSpeech.noun, 1000);
             Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
-            PicturesWithFullLocation = new() { path + "snowman1picture.png", path + "snowman2picture.png", path + "snowman3picture.png", path + "snowman4picture.png", path + "snowman5picture.png", path + "snowman6picture.png" };
+            ResetPicturesWithFullLocation();
         }
-
         public string GameName { get; private set; }
         public GameStatusEnum GameStatus
         {
@@ -99,21 +96,7 @@ namespace MeltingSnowmanSystem
             } 
         }
 
-        public ObservableCollection<String> PicturesWithFullLocation
-        {
-            get => _pictureswithfulllocation;
-            private set
-            {
-                _pictureswithfulllocation = value;
-                this.InvokePropertyChanged();
-                this.InvokePropertyChanged(Picture1);
-            }
-        }
-
-        public string Picture1
-        {
-            get => PicturesWithFullLocation[0];
-        }
+        public List<Picture> PicturesWithFullLocation { get; private set; } = new();
 
         public Word Word
         {
@@ -195,7 +178,8 @@ namespace MeltingSnowmanSystem
             });
             this.Message.MessageText = "";
             this.Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
-            this.PicturesWithFullLocation = new() { path + "snowman1picture.png", path + "snowman2picture.png", path + "snowman3picture.png", path + "snowman4picture.png", path + "snowman5picture.png", path + "snowman6picture.png" };
+            ResetPicturesWithFullLocation();
+            //this.PicturesWithFullLocation = new() { path + "snowman1picture.png", path + "snowman2picture.png", path + "snowman3picture.png", path + "snowman4picture.png", path + "snowman5picture.png", path + "snowman6picture.png" };
             GetMysteryWord();
         }
 
@@ -219,9 +203,9 @@ namespace MeltingSnowmanSystem
                 int numblankpics = Pictures.Where(p => p.Contains("blank") == true).Count();
                 newPictures[numblankpics] = "snowmanblankpicture.png";
                 Pictures = newPictures;
-                var newPicturesWithFullLocation = new ObservableCollection<string>(PicturesWithFullLocation);
-                int numblankpics2 = PicturesWithFullLocation.Where(p => p.Contains("blank") == true).Count();
-                newPicturesWithFullLocation[numblankpics2] = path + "snowmanblankpicture.png";
+                var newPicturesWithFullLocation = new List<Picture>(PicturesWithFullLocation);
+                int numblankpics2 = PicturesWithFullLocation.Where(p => p.PictureValue.Contains("blank") == true).Count();
+                newPicturesWithFullLocation[numblankpics2].PictureValue = path + "snowmanblankpicture.png";
                 PicturesWithFullLocation = newPicturesWithFullLocation;
                 letter.BackColor = LetterIncorrectColor;
             }
@@ -234,7 +218,7 @@ namespace MeltingSnowmanSystem
             {
                 this.GameStatus = GameStatusEnum.GameWon;
             }
-            else if (Pictures.Count(pb => pb.Contains("blank")) == 6 || PicturesWithFullLocation.Count(pb => pb.Contains("blank")) == 6)
+            else if (Pictures.Count(pb => pb.Contains("blank")) == 6 || PicturesWithFullLocation.Count(pb => pb.PictureValue.Contains("blank")) == 6)
             {
                 this.GameStatus = GameStatusEnum.GameLost;
             }
@@ -278,6 +262,20 @@ namespace MeltingSnowmanSystem
         private void InvokePropertyChanged([CallerMemberName] string propertyname = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
+        }
+        private void ResetPicturesWithFullLocation()
+        {
+            this.PicturesWithFullLocation.Clear();
+            for (int i = 0; i < 6; i++)
+            {
+                this.PicturesWithFullLocation.Add(new Picture());
+            }
+            PicturesWithFullLocation[0].PictureValue = path + "snowman1picture.png";
+            PicturesWithFullLocation[1].PictureValue = path + "snowman2picture.png";
+            PicturesWithFullLocation[2].PictureValue = path + "snowman3picture.png";
+            PicturesWithFullLocation[3].PictureValue = path + "snowman4picture.png";
+            PicturesWithFullLocation[4].PictureValue = path + "snowman5picture.png";
+            PicturesWithFullLocation[5].PictureValue = path + "snowman6picture.png";
         }
     }
 }

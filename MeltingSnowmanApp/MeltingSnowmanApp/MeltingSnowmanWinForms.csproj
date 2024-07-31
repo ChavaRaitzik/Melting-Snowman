@@ -58,4 +58,10 @@
     <ProjectReference Include="..\MeltingSnowmanSystem\MeltingSnowmanSystem.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Images\snowmanblankpicture.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -12,14 +12,24 @@ namespace MeltingSnowmanApp
         public frmMeltingSnowmanApp()
         {
             InitializeComponent();
-            //picbox1.DataBindings.Add("ImageLocation", game, "PicturesWithFullLocation[0]");
-            //picbox1.DataBindings.Add("ImageLocation", game, "Picture1");
-            picbox1.ImageLocation = game.PicturesWithFullLocation[0];
-            picbox2.ImageLocation = game.PicturesWithFullLocation[1];
-            picbox3.ImageLocation = game.PicturesWithFullLocation[2];
-            picbox4.ImageLocation = game.PicturesWithFullLocation[3];
-            picbox5.ImageLocation = game.PicturesWithFullLocation[4];
-            picbox6.ImageLocation = game.PicturesWithFullLocation[5];
+            Picture pic1 = game.PicturesWithFullLocation[0];
+            picbox1.DataBindings.Add("ImageLocation", pic1, "PictureValue");
+            Picture pic2 = game.PicturesWithFullLocation[1];
+            picbox2.DataBindings.Add("ImageLocation", pic2, "PictureValue");
+            Picture pic3 = game.PicturesWithFullLocation[2];
+            picbox3.DataBindings.Add("ImageLocation", pic3, "PictureValue");
+            Picture pic4 = game.PicturesWithFullLocation[3];
+            picbox4.DataBindings.Add("ImageLocation", pic4, "PictureValue");
+            Picture pic5 = game.PicturesWithFullLocation[4];
+            picbox5.DataBindings.Add("ImageLocation", pic5, "PictureValue");
+            Picture pic6 = game.PicturesWithFullLocation[5];
+            picbox6.DataBindings.Add("ImageLocation", pic6, "PictureValue");
+            //picbox1.ImageLocation = game.PicturesWithFullLocation[0].PictureValue;
+            //picbox2.ImageLocation = game.PicturesWithFullLocation[1].PictureValue;
+            //picbox3.ImageLocation = game.PicturesWithFullLocation[2].PictureValue;
+            //picbox4.ImageLocation = game.PicturesWithFullLocation[3].PictureValue;
+            //picbox5.ImageLocation = game.PicturesWithFullLocation[4].PictureValue;
+            //picbox6.ImageLocation = game.PicturesWithFullLocation[5].PictureValue;
             lstabcbuttons = new() { btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ };
             //lstpictureboxes = new() { picbox1, picbox2, picbox3, picbox4, picbox5, picbox6 };
             MeltingSnowmanSystem.Message message = game.Message;
@@ -44,12 +54,6 @@ namespace MeltingSnowmanApp
         private void NewGame()
         {
             game.NewGame();
-            //picbox1.ImageLocation = path + "SnowmanPicture1.png";
-            //picbox2.ImageLocation = path + "SnowmanPicture2.png";
-            //picbox3.ImageLocation = path + "SnowmanPicture3.png";
-            //picbox4.ImageLocation = path + "SnowmanPicture4.png";
-            //picbox5.ImageLocation = path + "SnowmanPicture5.png";
-            //picbox6.ImageLocation = path + "SnowmanPicture6.png";
         }
 
         private void GuessALetter(Button btn)
@@ -58,24 +62,6 @@ namespace MeltingSnowmanApp
             btnGiveUp.Enabled = true;
             Letter letter = game.Letters[lstabcbuttons.IndexOf(btn)];
             game.GuessALetter(letter);
-            //char letter = char.Parse(btn.Text.ToLower());
-            //if (mysteryword.Contains(letter))
-            //{
-            //    btn.BackColor = Color.LimeGreen;
-            //    for (int i = 0; i < mysteryword.Length; i++)
-            //    {
-            //        if (mysteryword[i] == letter)
-            //        {
-            //            lblMysteryWord.Text = lblMysteryWord.Text.Remove(i, 1);
-            //            lblMysteryWord.Text = lblMysteryWord.Text.Insert(i, letter.ToString());
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    PictureBox picturebox = lstpictureboxes.FirstOrDefault(pb => pb.Image != null);
-            //    picturebox.Image = null;
-            //}
         }
 
         private void DetectGameWonOrLost()
