@@ -7,31 +7,31 @@ namespace MeltingSnowmanApp
     {
         Game game = new();
         List<Button> lstabcbuttons;
-        //List<PictureBox> lstpictureboxes;
+        //Picture pic1 = new();
+        //Picture pic2 = new();
+        //Picture pic3 = new();
+        //Picture pic4 = new();
+        //Picture pic5 = new();
+        //Picture pic6 = new();
+
 
         public frmMeltingSnowmanApp()
         {
             InitializeComponent();
-            Picture pic1 = game.PicturesWithFullLocation[0];
-            picbox1.DataBindings.Add("ImageLocation", pic1, "PictureValue");
-            Picture pic2 = game.PicturesWithFullLocation[1];
-            picbox2.DataBindings.Add("ImageLocation", pic2, "PictureValue");
-            Picture pic3 = game.PicturesWithFullLocation[2];
-            picbox3.DataBindings.Add("ImageLocation", pic3, "PictureValue");
-            Picture pic4 = game.PicturesWithFullLocation[3];
-            picbox4.DataBindings.Add("ImageLocation", pic4, "PictureValue");
-            Picture pic5 = game.PicturesWithFullLocation[4];
-            picbox5.DataBindings.Add("ImageLocation", pic5, "PictureValue");
-            Picture pic6 = game.PicturesWithFullLocation[5];
-            picbox6.DataBindings.Add("ImageLocation", pic6, "PictureValue");
-            //picbox1.ImageLocation = game.PicturesWithFullLocation[0].PictureValue;
-            //picbox2.ImageLocation = game.PicturesWithFullLocation[1].PictureValue;
-            //picbox3.ImageLocation = game.PicturesWithFullLocation[2].PictureValue;
-            //picbox4.ImageLocation = game.PicturesWithFullLocation[3].PictureValue;
-            //picbox5.ImageLocation = game.PicturesWithFullLocation[4].PictureValue;
-            //picbox6.ImageLocation = game.PicturesWithFullLocation[5].PictureValue;
+            //pic1 = game.PicturesWithFullLocation[0];
+            //picbox1.DataBindings.Add("ImageLocation", pic1, "PictureValue");
+            //pic2 = game.PicturesWithFullLocation[1];
+            //picbox2.DataBindings.Add("ImageLocation", pic2, "PictureValue");
+            //pic3 = game.PicturesWithFullLocation[2];
+            //picbox3.DataBindings.Add("ImageLocation", pic3, "PictureValue");
+            //pic4 = game.PicturesWithFullLocation[3];
+            //picbox4.DataBindings.Add("ImageLocation", pic4, "PictureValue");
+            //pic5 = game.PicturesWithFullLocation[4];
+            //picbox5.DataBindings.Add("ImageLocation", pic5, "PictureValue");
+            //pic6 = game.PicturesWithFullLocation[5];
+            //picbox6.DataBindings.Add("ImageLocation", pic6, "PictureValue");
+            SetImageLocation();
             lstabcbuttons = new() { btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ };
-            //lstpictureboxes = new() { picbox1, picbox2, picbox3, picbox4, picbox5, picbox6 };
             MeltingSnowmanSystem.Message message = game.Message;
             lblMessageBox.DataBindings.Add("Text", message, "MessageText");
             lblMessageBox.DataBindings.Add("ForeColor", message, "Color");
@@ -54,6 +54,7 @@ namespace MeltingSnowmanApp
         private void NewGame()
         {
             game.NewGame();
+            SetImageLocation();
         }
 
         private void GuessALetter(Button btn)
@@ -62,6 +63,13 @@ namespace MeltingSnowmanApp
             btnGiveUp.Enabled = true;
             Letter letter = game.Letters[lstabcbuttons.IndexOf(btn)];
             game.GuessALetter(letter);
+            //pic1 = game.PicturesWithFullLocation[0];
+            //pic2 = game.PicturesWithFullLocation[1];
+            //pic3 = game.PicturesWithFullLocation[2];
+            //pic4 = game.PicturesWithFullLocation[3];
+            //pic5 = game.PicturesWithFullLocation[4];
+            //pic6 = game.PicturesWithFullLocation[5];
+            SetImageLocation();
         }
 
         private void DetectGameWonOrLost()
@@ -79,6 +87,16 @@ namespace MeltingSnowmanApp
             game.GiveUp();
             btnGiveUp.Enabled = false;
             btnStart.Enabled = true;
+        }
+
+        private void SetImageLocation()
+        {
+            picbox1.ImageLocation = game.PicturesWithFullLocation[0].PictureValue;
+            picbox2.ImageLocation = game.PicturesWithFullLocation[1].PictureValue;
+            picbox3.ImageLocation = game.PicturesWithFullLocation[2].PictureValue;
+            picbox4.ImageLocation = game.PicturesWithFullLocation[3].PictureValue;
+            picbox5.ImageLocation = game.PicturesWithFullLocation[4].PictureValue;
+            picbox6.ImageLocation = game.PicturesWithFullLocation[5].PictureValue;
         }
 
         private void BtnStart_Click(object? sender, EventArgs e)

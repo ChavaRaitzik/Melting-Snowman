@@ -179,7 +179,6 @@ namespace MeltingSnowmanSystem
             this.Message.MessageText = "";
             this.Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
             ResetPicturesWithFullLocation();
-            //this.PicturesWithFullLocation = new() { path + "snowman1picture.png", path + "snowman2picture.png", path + "snowman3picture.png", path + "snowman4picture.png", path + "snowman5picture.png", path + "snowman6picture.png" };
             GetMysteryWord();
         }
 
@@ -220,7 +219,7 @@ namespace MeltingSnowmanSystem
             }
             else if (Pictures.Count(pb => pb.Contains("blank")) == 6 || PicturesWithFullLocation.Count(pb => pb.PictureValue.Contains("blank")) == 6)
             {
-                this.GameStatus = GameStatusEnum.GameLost;
+                        this.GameStatus = GameStatusEnum.GameLost;
             }
             DisplayScore();
         }
