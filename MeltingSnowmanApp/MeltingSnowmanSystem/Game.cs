@@ -29,7 +29,7 @@ namespace MeltingSnowmanSystem
 
         Word _word = new Word();
 
-        string path = "C:\\Users\\chava\\repos\\Melting-Snowman\\MeltingSnowmanApp\\MeltingSnowmanApp\\Images\\";
+        //string path = "C:\\Users\\chava\\repos\\Melting-Snowman\\MeltingSnowmanApp\\MeltingSnowmanApp\\Images\\";
 
         private static int numgames;
 
@@ -71,7 +71,7 @@ namespace MeltingSnowmanSystem
 
             MysteryWords = wordgenerator.GetWords(WordGenerator.PartOfSpeech.noun, 1000);
             Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
-            ResetPicturesWithFullLocation();
+            //ResetPicturesWithFullLocation();
         }
         public string GameName { get; private set; }
         public GameStatusEnum GameStatus
@@ -96,7 +96,7 @@ namespace MeltingSnowmanSystem
             } 
         }
 
-        public ObservableCollection<Picture> PicturesWithFullLocation { get; private set; } = new();
+        //public ObservableCollection<Picture> PicturesWithFullLocation { get; private set; } = new();
 
         public Word Word
         {
@@ -178,7 +178,7 @@ namespace MeltingSnowmanSystem
             });
             this.Message.MessageText = "";
             this.Pictures = new() { "snowman1picture.png", "snowman2picture.png", "snowman3picture.png", "snowman4picture.png", "snowman5picture.png", "snowman6picture.png" };
-            ResetPicturesWithFullLocation();
+            //ResetPicturesWithFullLocation();
             GetMysteryWord();
         }
 
@@ -202,10 +202,10 @@ namespace MeltingSnowmanSystem
                 int numblankpics = Pictures.Where(p => p.Contains("blank") == true).Count();
                 newPictures[numblankpics] = "snowmanblankpicture.png";
                 Pictures = newPictures;
-                var newPicturesWithFullLocation = new ObservableCollection<Picture>(PicturesWithFullLocation);
-                int numblankpics2 = PicturesWithFullLocation.Where(p => p.PictureValue.Contains("blank") == true).Count();
-                newPicturesWithFullLocation[numblankpics2].PictureValue = path + "snowmanblankpicture.png";
-                PicturesWithFullLocation = newPicturesWithFullLocation;
+                //var newPicturesWithFullLocation = new ObservableCollection<Picture>(PicturesWithFullLocation);
+                //int numblankpics2 = PicturesWithFullLocation.Where(p => p.PictureValue.Contains("blank") == true).Count();
+                //newPicturesWithFullLocation[numblankpics2].PictureValue = "snowmanblankpicture.png";
+                //PicturesWithFullLocation = newPicturesWithFullLocation;
                 letter.BackColor = LetterIncorrectColor;
             }
             letter.IsEnabled = false;
@@ -217,9 +217,10 @@ namespace MeltingSnowmanSystem
             {
                 this.GameStatus = GameStatusEnum.GameWon;
             }
-            else if (Pictures.Count(pb => pb.Contains("blank")) == 6 || PicturesWithFullLocation.Count(pb => pb.PictureValue.Contains("blank")) == 6)
+            //else if (Pictures.Count(pb => pb.Contains("blank")) == 6 || PicturesWithFullLocation.Count(pb => pb.PictureValue.Contains("blank")) == 6)
+            else if (Pictures.Count(pb => pb.Contains("blank")) == 6 )
             {
-                        this.GameStatus = GameStatusEnum.GameLost;
+                this.GameStatus = GameStatusEnum.GameLost;
             }
             DisplayScore();
         }
@@ -262,19 +263,19 @@ namespace MeltingSnowmanSystem
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
         }
-        private void ResetPicturesWithFullLocation()
-        {
-            this.PicturesWithFullLocation.Clear();
-            for (int i = 0; i < 6; i++)
-            {
-                this.PicturesWithFullLocation.Add(new Picture());
-            }
-            PicturesWithFullLocation[0].PictureValue = path + "snowman1picture.png";
-            PicturesWithFullLocation[1].PictureValue = path + "snowman2picture.png";
-            PicturesWithFullLocation[2].PictureValue = path + "snowman3picture.png";
-            PicturesWithFullLocation[3].PictureValue = path + "snowman4picture.png";
-            PicturesWithFullLocation[4].PictureValue = path + "snowman5picture.png";
-            PicturesWithFullLocation[5].PictureValue = path + "snowman6picture.png";
-        }
+        //private void ResetPicturesWithFullLocation()
+        //{
+        //    this.PicturesWithFullLocation.Clear();
+        //    for (int i = 0; i < 6; i++)
+        //    {
+        //        this.PicturesWithFullLocation.Add(new Picture());
+        //    }
+        //    PicturesWithFullLocation[0].PictureValue = "snowman1picture.png";
+        //    PicturesWithFullLocation[1].PictureValue = "snowman2picture.png";
+        //    PicturesWithFullLocation[2].PictureValue = "snowman3picture.png";
+        //    PicturesWithFullLocation[3].PictureValue = "snowman4picture.png";
+        //    PicturesWithFullLocation[4].PictureValue = "snowman5picture.png";
+        //    PicturesWithFullLocation[5].PictureValue = "snowman6picture.png";
+        //}
     }
 }
