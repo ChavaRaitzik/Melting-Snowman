@@ -1,5 +1,4 @@
 ﻿using CrypticWizard.RandomWordGenerator;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -19,7 +18,7 @@ namespace MeltingSnowmanSystem
 
         string _dash = "";
 
-        ObservableCollection<string> _pictures;
+        List<string> _pictures;
 
         Word _worddisplay = new Word();
 
@@ -87,7 +86,7 @@ namespace MeltingSnowmanSystem
         public List<String> GameWonMessages { get; private set; } = new() { "You Won!", "Great Job!", "Congratulations!" };
         public List<String> GameLostMessages { get; private set; } = new() { "Better Luck Next Time", "Too Many Incorrect Guesses", "Try Again" };
         public List<String> GiveUpMessages { get; private set; } = new() { "Never give up", "Next time, just try your best", "Was that really so hard?" };
-        public ObservableCollection<String> Pictures
+        public List<String> Pictures
         {   get => _pictures;
             private set 
             { 
@@ -198,7 +197,7 @@ namespace MeltingSnowmanSystem
             }
             else
             {
-                var newPictures = new ObservableCollection<string>(Pictures);
+                var newPictures = new List<string>(Pictures);
                 int numblankpics = Pictures.Where(p => p.Contains("blank") == true).Count();
                 newPictures[numblankpics] = "snowmanblankpicture.png";
                 Pictures = newPictures;

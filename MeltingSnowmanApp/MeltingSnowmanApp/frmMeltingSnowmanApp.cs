@@ -97,12 +97,6 @@ namespace MeltingSnowmanApp
             picbox4.ImageLocation = path + game.Pictures[3];
             picbox5.ImageLocation = path + game.Pictures[4];
             picbox6.ImageLocation = path + game.Pictures[5];
-            //picbox1.ImageLocation = path + game.PicturesWithFullLocation[0].PictureValue;
-            //picbox2.ImageLocation = path + game.PicturesWithFullLocation[1].PictureValue;
-            //picbox3.ImageLocation = path + game.PicturesWithFullLocation[2].PictureValue;
-            //picbox4.ImageLocation = path + game.PicturesWithFullLocation[3].PictureValue;
-            //picbox5.ImageLocation = path + game.PicturesWithFullLocation[4].PictureValue;
-            //picbox6.ImageLocation = path + game.PicturesWithFullLocation[5].PictureValue;
         }
 
         private void BtnStart_Click(object? sender, EventArgs e)
