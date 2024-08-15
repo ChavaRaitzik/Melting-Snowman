@@ -1,5 +1,4 @@
 ﻿using MeltingSnowmanSystem;
-using static MeltingSnowmanSystem.Game;
 
 namespace MeltingSnowmanApp
 {
@@ -76,7 +75,7 @@ namespace MeltingSnowmanApp
         private void DetectGameWonOrLost()
         {
             game.DetectGameWonOrLost();
-            if (game.GameStatus != GameStatusEnum.Playing)
+            if (game.GameStatus != Game.GameStatusEnum.Playing)
             {
                 btnGiveUp.Enabled = false;
                 btnStart.Enabled = true;
@@ -115,7 +114,7 @@ namespace MeltingSnowmanApp
         {
             if (sender is Button)
             {
-                if (game.GameStatus == GameStatusEnum.Playing)
+                if (game.GameStatus == Game.GameStatusEnum.Playing)
                 {
                     Button btn = (Button)sender;
                     GuessALetter(btn);

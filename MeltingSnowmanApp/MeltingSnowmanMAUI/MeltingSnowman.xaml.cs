@@ -1,5 +1,5 @@
 using MeltingSnowmanSystem;
-using static MeltingSnowmanSystem.Game;
+//using static MeltingSnowmanSystem.Game;
 
 namespace MeltingSnowmanMAUI;
 
@@ -28,7 +28,7 @@ public partial class MeltingSnowman : ContentPage
 
     private void NewGame()
     {
-        if (activegame.GameStatus != GameStatusEnum.Playing) 
+        if (activegame.GameStatus != Game.GameStatusEnum.Playing) 
         {
             activegame.NewGame();
         };
@@ -45,7 +45,7 @@ public partial class MeltingSnowman : ContentPage
     private void DetectGameWonOrLost()
     {
         activegame.DetectGameWonOrLost();
-        if (activegame.GameStatus != GameStatusEnum.Playing)
+        if (activegame.GameStatus != Game.GameStatusEnum.Playing)
         {
             btnGiveUp.IsEnabled = false;
             btnStart.IsEnabled = true;
@@ -63,7 +63,7 @@ public partial class MeltingSnowman : ContentPage
     {
         if (sender is Button)
         {
-            if (activegame.GameStatus == GameStatusEnum.Playing)
+            if (activegame.GameStatus == Game.GameStatusEnum.Playing)
             {
                 Button btn = (Button)sender;
                 GuessALetter(btn);
@@ -91,7 +91,7 @@ public partial class MeltingSnowman : ContentPage
             this.BindingContext = activegame;
             switch (activegame.GameStatus)
             {
-                case GameStatusEnum.Playing:
+                case Game.GameStatusEnum.Playing:
                     btnGiveUp.IsEnabled = true;
                     btnStart.IsEnabled = false;
                     break;

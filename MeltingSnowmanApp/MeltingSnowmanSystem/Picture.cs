@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace MeltingSnowmanSystem
 {
-    public class Picture
+    public class Picture : INotifyPropertyChanged
     {
        
             string _picturevalue = "";
