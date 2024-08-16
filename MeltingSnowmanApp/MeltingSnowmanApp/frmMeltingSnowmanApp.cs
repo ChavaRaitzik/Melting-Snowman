@@ -7,29 +7,10 @@ namespace MeltingSnowmanApp
         Game game = new();
         List<Button> lstabcbuttons;
         string path = Application.StartupPath + @"\images\";
-        //Picture pic1 = new();
-        //Picture pic2 = new();
-        //Picture pic3 = new();
-        //Picture pic4 = new();
-        //Picture pic5 = new();
-        //Picture pic6 = new();
-
 
         public frmMeltingSnowmanApp()
         {
             InitializeComponent();
-            //pic1 = game.PicturesWithFullLocation[0];
-            //picbox1.DataBindings.Add("ImageLocation", pic1, "PictureValue");
-            //pic2 = game.PicturesWithFullLocation[1];
-            //picbox2.DataBindings.Add("ImageLocation", pic2, "PictureValue");
-            //pic3 = game.PicturesWithFullLocation[2];
-            //picbox3.DataBindings.Add("ImageLocation", pic3, "PictureValue");
-            //pic4 = game.PicturesWithFullLocation[3];
-            //picbox4.DataBindings.Add("ImageLocation", pic4, "PictureValue");
-            //pic5 = game.PicturesWithFullLocation[4];
-            //picbox5.DataBindings.Add("ImageLocation", pic5, "PictureValue");
-            //pic6 = game.PicturesWithFullLocation[5];
-            //picbox6.DataBindings.Add("ImageLocation", pic6, "PictureValue");
             SetImageLocation();
             lstabcbuttons = new() { btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ };
             MeltingSnowmanSystem.Message message = game.Message;
@@ -63,12 +44,6 @@ namespace MeltingSnowmanApp
             btnGiveUp.Enabled = true;
             Letter letter = game.Letters[lstabcbuttons.IndexOf(btn)];
             game.GuessALetter(letter);
-            //pic1 = game.PicturesWithFullLocation[0];
-            //pic2 = game.PicturesWithFullLocation[1];
-            //pic3 = game.PicturesWithFullLocation[2];
-            //pic4 = game.PicturesWithFullLocation[3];
-            //pic5 = game.PicturesWithFullLocation[4];
-            //pic6 = game.PicturesWithFullLocation[5];
             SetImageLocation();
         }
 
